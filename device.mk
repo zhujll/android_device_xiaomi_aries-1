@@ -58,13 +58,13 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/thermald-aries.conf:system/etc/thermald.conf
 
 PRODUCT_COPY_FILES += \
-	device/lge/aries/init.aries.rc:root/init.aries.rc \
-	device/lge/aries/init.aries.usb.rc:root/init.aries.usb.rc \
-	device/lge/aries/fstab.aries:root/fstab.aries \
-	device/lge/aries/twrp.fstab:recovery/root/etc/twrp.fstab \
-	device/lge/aries/ueventd.aries.rc:root/ueventd.aries.rc \
-	device/lge/aries/media_profiles.xml:system/etc/media_profiles.xml \
-	device/lge/aries/media_codecs.xml:system/etc/media_codecs.xml
+	device/xiaomi/aries/init.aries.rc:root/init.aries.rc \
+	device/xiaomi/aries/init.aries.usb.rc:root/init.aries.usb.rc \
+	device/xiaomi/aries/fstab.aries:root/fstab.aries \
+	device/xiaomi/aries/twrp.fstab:recovery/root/etc/twrp.fstab \
+	device/xiaomi/aries/ueventd.aries.rc:root/ueventd.aries.rc \
+	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
+	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \

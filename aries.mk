@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # Thermal config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald-8064-N1.conf:system/etc/thermald.conf
+    $(LOCAL_PATH)/configs/thermald-8064-MI2.conf:system/etc/thermald.conf
 
 # Init logos
 PRODUCT_PACKAGES += \
@@ -53,7 +53,7 @@ PRODUCT_PACKAGES += \
     wlan.rle
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/oppo/n1/n1-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/aries/aries-vendor.mk)
 
 # Inherit from apq8064-common
-$(call inherit-product, device/oppo/apq8064-common/apq8064.mk)
+$(call inherit-product, device/xiaomi/apq8064-common/apq8064.mk)

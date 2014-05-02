@@ -1,3 +1,3 @@
-add_lunch_combo cm_n1-user
-add_lunch_combo cm_n1-userdebug
-add_lunch_combo cm_n1-eng
+add_lunch_combo cm_aries-user
+add_lunch_combo cm_aries-userdebug
+add_lunch_combo cm_aries-eng

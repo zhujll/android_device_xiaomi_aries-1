@@ -1,4 +1,4 @@
-$(call inherit-product, device/oppo/n1/full_n1.mk)
+$(call inherit-product, device/xiaomi/aries/full_aries.mk)
 
 # Inherit some common CM stuff
 $(call inherit-product, vendor/cm/config/gsm.mk)
@@ -9,9 +9,9 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_n1
-PRODUCT_DEVICE := n1
-PRODUCT_GMS_CLIENTID_BASE := android-oppo
+PRODUCT_NAME := cm_aries
+PRODUCT_DEVICE := aries
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-TARGET_VENDOR_PRODUCT_NAME := CM
-TARGET_VENDOR_DEVICE_NAME := N1
+TARGET_VENDOR_PRODUCT_NAME := Xiaomi
+TARGET_VENDOR_DEVICE_NAME := MI2

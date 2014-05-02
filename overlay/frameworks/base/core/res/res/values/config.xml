@@ -88,5 +88,5 @@
     <!-- True if the gesture service should be started at system start -->
     <bool name="config_enableGestureService">true</bool>
 
-    <string name="config_mms_user_agent">OppoN1</string>
+    <string name="config_mms_user_agent">XiaomiMI2</string>
 </resources>

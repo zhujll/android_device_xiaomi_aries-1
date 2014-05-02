@@ -15,12 +15,12 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from n1 device
-$(call inherit-product, device/oppo/n1/n1.mk)
+# Inherit from aries device
+$(call inherit-product, device/xioami/aries/aries.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_n1
-PRODUCT_DEVICE := n1
-PRODUCT_BRAND := OPPO
-PRODUCT_MANUFACTURER := OPPO
-PRODUCT_MODEL := N1
+PRODUCT_NAME := full_aries
+PRODUCT_DEVICE := aries
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := MI2

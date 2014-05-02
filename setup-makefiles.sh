@@ -2,6 +2,6 @@
 
 set -e
 
-export DEVICE=n1
-export VENDOR=oppo
+export DEVICE=aries
+export VENDOR=xiaomi
 ./../apq8064-common/setup-makefiles.sh $@

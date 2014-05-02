@@ -21,12 +21,6 @@ ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.sensors.gestures=true
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
-# NFC
-debug.nfc.fw_download=true
-debug.nfc.fw_boot_download=false
-debug.nfc.se=true
-ro.nfc.port=I2C
-
 # Audio (FIXME)
 lpa.decode=false
 tunnel.audiovideo.decode=false

@@ -40,14 +40,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald-8064-MI2.conf:system/etc/thermald.conf
 
-# Init logos
-PRODUCT_PACKAGES += \
-    at.rle \
-    fastboot.rle \
-    initlogo.rle \
-    tpupdate.rle \
-    wlan.rle
-
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/xiaomi/aries/aries-vendor.mk)
 

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #
-# Input Device Calibration File for the Aries touch screen.
+# Input Device Calibration File for the manta touch screen.
 #
 
 device.internal = 1
@@ -21,12 +21,12 @@ device.internal = 1
 touch.deviceType = touchScreen
 touch.orientationAware = 1
 
-touch.size.calibration = diameter
-touch.size.scale = 22.5
-touch.size.bias = 0
+touch.size.calibration = area
+touch.size.scale = 52
+touch.size.bias = 11.8
 touch.size.isSummed = 0
 
 touch.pressure.calibration = amplitude
-touch.pressure.scale = 0.0125
+touch.pressure.scale = 0.015
 
-touch.orientation.calibration = none
+touch.orientation.calibration = vector

@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/touch_dev.idc:system/usr/idc/touch_dev.idc
+	device/xiaomi/aries/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

@@ -323,10 +323,24 @@
                    channels="1" />
         </EncoderProfile>
 
-        <ImageEncoding quality="95" />
-        <ImageEncoding quality="80" />
+		<EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
+		  <Video codec="h264"
+		         bitRate="8000000"
+		         width="1920"
+		         height="1088"
+		         frameRate="30" />
+
+		  <!-- audio setting is ignored -->
+		  <Audio codec="aac"
+		         bitRate="156000"
+		         sampleRate="48000"
+		         channels="2" />
+		</EncoderProfile>
+
+        <ImageEncoding quality="100" />
+        <ImageEncoding quality="90" />
         <ImageEncoding quality="70" />
-        <ImageDecoding memCap="20000000" />
+        <ImageDecoding memCap="60000000" />
 
     </CamcorderProfiles>
 

@@ -150,6 +150,8 @@ ifeq ($(BOARD_USES_MOTOROLA_EMU_AUDIO),true)
     common_cflags += -DMOTOROLA_EMU_AUDIO
 endif
 
+common_cflags += -fno-strict-aliasing
+
 include $(CLEAR_VARS)
 
 LOCAL_ARM_MODE := arm

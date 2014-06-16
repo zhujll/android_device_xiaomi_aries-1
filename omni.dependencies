@@ -1,6 +1,12 @@
 [
   {
     "remote":      "omnirom",
+    "repository":  "android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision":    "android-5.0"
+  },
+  {
+    "remote":      "omnirom",
     "repository":  "android_kernel_xiaomi_aries",
     "target_path": "kernel/xiaomi/aries",
     "revision":    "android-5.0"

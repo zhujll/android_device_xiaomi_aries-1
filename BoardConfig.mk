@@ -24,7 +24,7 @@ TARGET_KERNEL_CONFIG := cyanogenmod_aries_defconfig
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/aries/bluetooth
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/xiaomi/aries/cmhw

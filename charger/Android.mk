@@ -3,13 +3,6 @@
 ifneq ($(BUILD_TINY_ANDROID),true)
 
 LOCAL_PATH := $(call my-dir)
-$(foreach board_define,$(BOARD_RECOVERY_DEFINES), \
-  $(if $($(board_define)), \
-    $(eval LOCAL_CFLAGS += -D$(board_define)=\"$($(board_define))\") \
-  ) \
-  )
-
-LOCAL_MODULE := charger_aries
 
 define _add-aries-charger-image
 include $$(CLEAR_VARS)

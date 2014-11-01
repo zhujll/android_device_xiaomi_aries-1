@@ -39,11 +39,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         librs_jni
 
-# Dualboot
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/recovery/mount_ext4_default.sh:recovery/root/res/dualboot/mount_ext4_default.sh \
-	device/xiaomi/aries/recovery/mount_ext4_tdb.sh:recovery/root/res/dualboot/mount_ext4_tdb.sh
-
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
 	device/xiaomi/aries/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
@@ -64,6 +59,7 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.usb.rc:root/init.aries.usb.rc \
 	device/xiaomi/aries/fstab.aries:root/fstab.aries \
 	device/xiaomi/aries/ueventd.aries.rc:root/ueventd.aries.rc \
+	device/xiaomi/aries/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
 	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
 	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
 

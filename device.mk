@@ -19,7 +19,8 @@
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS := device/xiaomi/aries/overlay
+# overlays
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -28,56 +29,38 @@ DEVICE_PACKAGE_OVERLAYS := device/xiaomi/aries/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_PACKAGES := \
-	lights.aries
-
-PRODUCT_PACKAGES += \
-    charger_res_images_aries \
-    charger_aries
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-        librs_jni
-
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-	device/xiaomi/aries/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-	device/xiaomi/aries/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-	device/xiaomi/aries/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-	device/xiaomi/aries/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-	device/xiaomi/aries/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
-
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
-	device/xiaomi/aries/audio/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/audio/mixer_paths.xml:system/etc/mixer_paths.xml
-
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/configs/thermald-aries.conf:system/etc/thermald.conf
-
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/rootdir/init.aries.rc:root/init.aries.rc \
-	device/xiaomi/aries/rootdir/init.aries.usb.rc:root/init.aries.usb.rc \
-	device/xiaomi/aries/rootdir/fstab.aries:root/fstab.aries \
-	device/xiaomi/aries/rootdir/ueventd.aries.rc:root/ueventd.aries.rc \
-	device/xiaomi/aries/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
-	device/xiaomi/aries/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
-	device/xiaomi/aries/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml
-
-# Prebuilt kl and kcm keymaps
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/rootdir/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-	device/xiaomi/aries/rootdir/usr/keylayout/sensor00fn1a.kl:system/usr/keylayout/sensor00fn1a.kl \
-	device/xiaomi/aries/rootdir/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
-	device/xiaomi/aries/rootdir/usr/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-	device/xiaomi/aries/rootdir/usr/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	device/xiaomi/aries/rootdir/usr/keylayout/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
-	device/xiaomi/aries/rootdir/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
-	device/xiaomi/aries/rootdir/usr/keychars/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
-	device/xiaomi/aries/rootdir/usr/keychars/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
-	device/xiaomi/aries/rootdir/usr/keychars/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
+	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+	$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+	$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+	$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+	$(LOCAL_PATH)/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+	$(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	$(LOCAL_PATH)/configs/thermald-aries.conf:system/etc/thermald.conf \
+	$(LOCAL_PATH)/rootdir/init.aries.rc:root/init.aries.rc \
+	$(LOCAL_PATH)/rootdir/init.aries.usb.rc:root/init.aries.usb.rc \
+	$(LOCAL_PATH)/rootdir/fstab.aries:root/fstab.aries \
+	$(LOCAL_PATH)/rootdir/ueventd.aries.rc:root/ueventd.aries.rc \
+	$(LOCAL_PATH)/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
+	$(LOCAL_PATH)/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh \
+	$(LOCAL_PATH)/rootdir/etc/gps.conf:system/etc/gps.conf \
+	$(LOCAL_PATH)/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
+	$(LOCAL_PATH)/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
+	$(LOCAL_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/sensor00fn1a.kl:system/usr/keylayout/sensor00fn1a.kl \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+	$(LOCAL_PATH)/rootdir/usr/keylayout/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
+	$(LOCAL_PATH)/rootdir/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
+	$(LOCAL_PATH)/rootdir/usr/keychars/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
+	$(LOCAL_PATH)/rootdir/usr/keychars/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
+	$(LOCAL_PATH)/rootdir/usr/keychars/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -99,26 +82,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
-PRODUCT_CHARACTERISTICS := nosdcard
-
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-PRODUCT_PACKAGES += \
-	librs_jni \
-	com.android.future.usb.accessory
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-	e2fsck
-
-PRODUCT_PACKAGES += \
-	libgenlock \
-	liboverlay \
-	hwcomposer.msm8960 \
-	gralloc.msm8960 \
-	copybit.msm8960 \
-	memtrack.msm8960
-
+# Audio
 PRODUCT_PACKAGES += \
 	alsa.msm8960 \
 	audio_policy.aries \
@@ -127,76 +91,104 @@ PRODUCT_PACKAGES += \
 	audio.usb.default \
 	audio.r_submix.default \
 	libaudio-resampler \
-	tinymix
+	tinymix \
+	libqcomvoiceprocessing
 
-# Voice processing
-PRODUCT_PACKAGES += libqcomvoiceprocessing
-PRODUCT_COPY_FILES += \
-    device/xiaomi/aries/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
-
-PRODUCT_PACKAGES += \
-	hci_qcomm_init
-
-PRODUCT_PACKAGES += \
-	power.msm8960
-
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
-	device/xiaomi/aries/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh
-
-PRODUCT_PACKAGES += \
-        libmm-omxcore \
-	libdivxdrmdecrypt \
-	libOmxVdec \
-	libOmxVenc \
-	libOmxCore \
-	libstagefrighthw \
-	libc2dcolorconvert
-
-# GPS configuration
-PRODUCT_COPY_FILES += \
-        device/xiaomi/aries/rootdir/etc/gps.conf:system/etc/gps.conf
-
-# GPS
-PRODUCT_PACKAGES += \
-        libloc_adapter \
-        libloc_eng \
-        libloc_api_v02 \
-        libloc_ds_api \
-        libloc_core \
-        libizat_core \
-        libgeofence \
-        libgps.utils \
-        gps.msm8960 \
-        flp.msm8960
-
-PRODUCT_PACKAGES += \
-	bdAddrLoader \
-	libwcnss_qmi \
-	wcnss_service
-
-PRODUCT_PACKAGES += \
-	keystore.msm8960
-
-PRODUCT_PACKAGES += \
-	dualboot_init
-
-# fmradio support
+# fmradio
 PRODUCT_PACKAGES += \
 	qcom.fmradio \
 	libqcomfm_jni \
 	FM2 \
 	FMRecord
 
+# Charger
 PRODUCT_PACKAGES += \
+    charger_res_images_aries \
+    charger_aries
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+	make_ext4fs \
+	e2fsck \
+	setup_fs
+
+# GPS
+PRODUCT_PACKAGES += \
+    libloc_adapter \
+    libloc_eng \
+    libloc_api_v02 \
+    libloc_ds_api \
+    libloc_core \
+    libizat_core \
+    libgeofence \
+    libgps.utils \
+    gps.msm8960 \
+    flp.msm8960
+
+# Graphics
+PRODUCT_PACKAGES += \
+	libgenlock \
+	liboverlay \
+	hwcomposer.msm8960 \
+	gralloc.msm8960 \
+	copybit.msm8960 \
+	memtrack.msm8960 \
+	librs_jni
+
+# Keystore
+PRODUCT_PACKAGES += \
+	keystore.msm8960
+
+# Lights
+PRODUCT_PACKAGES := \
+	lights.aries
+
+# OMX
+PRODUCT_PACKAGES += \
+	libc2dcolorconvert \
+	libdivxdrmdecrypt \
+	libOmxCore \
+	libOmxVdec \
+	libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
-    libOmxQcelp13Enc
+    libOmxQcelp13Enc \
+	libstagefrighthw \
+    libmm-omxcore
+
+# Power
+PRODUCT_PACKAGES += \
+	power.msm8960
 
 # QRNGD
 PRODUCT_PACKAGES += qrngd
 
+# USB
+PRODUCT_PACKAGES += \
+	com.android.future.usb.accessory
+
+# RIL
+PRODUCT_PACKAGES += \
+	hci_qcomm_init
+
+# Wifi
+PRODUCT_PACKAGES += \
+	libwcnss_qmi \
+	wcnss_service
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+	bdAddrLoader
+
+# Dualboot
+PRODUCT_PACKAGES += \
+	syspart_select
+
+PRODUCT_CHARACTERISTICS := nosdcard
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# call dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # This is the aries-specific audio package

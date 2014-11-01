@@ -72,7 +72,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_BOOTLOADER_NAME=aries
 TARGET_BOARD_INFO_FILE := device/xiaomi/aries/board-info.txt
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/aries/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/aries/bluetooth/include
 
 # Use the CM PowerHAL
 TARGET_POWERHAL_VARIANT := cm
@@ -91,7 +91,7 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WPA_SUPPLICANT_VERSION  := VER_0_8_X
 
-BOARD_EGL_CFG := device/xiaomi/aries/egl.cfg
+BOARD_EGL_CFG := device/xiaomi/aries/configs/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true

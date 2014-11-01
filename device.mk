@@ -40,45 +40,44 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-	device/xiaomi/aries/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-	device/xiaomi/aries/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+	device/xiaomi/aries/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+	device/xiaomi/aries/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+	device/xiaomi/aries/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+	device/xiaomi/aries/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+	device/xiaomi/aries/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+	device/xiaomi/aries/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
-	device/xiaomi/aries/audio_policy.conf:system/etc/audio_policy.conf
+	device/xiaomi/aries/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+	device/xiaomi/aries/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/mixer_paths.xml:system/etc/mixer_paths.xml
+	device/xiaomi/aries/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/thermald-aries.conf:system/etc/thermald.conf
+	device/xiaomi/aries/configs/thermald-aries.conf:system/etc/thermald.conf
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/init.aries.rc:root/init.aries.rc \
-	device/xiaomi/aries/init.aries.usb.rc:root/init.aries.usb.rc \
-	device/xiaomi/aries/fstab.aries:root/fstab.aries \
-	device/xiaomi/aries/ueventd.aries.rc:root/ueventd.aries.rc \
+	device/xiaomi/aries/rootdir/init.aries.rc:root/init.aries.rc \
+	device/xiaomi/aries/rootdir/init.aries.usb.rc:root/init.aries.usb.rc \
+	device/xiaomi/aries/rootdir/fstab.aries:root/fstab.aries \
+	device/xiaomi/aries/rootdir/ueventd.aries.rc:root/ueventd.aries.rc \
 	device/xiaomi/aries/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
-	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
-	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
+	device/xiaomi/aries/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
+	device/xiaomi/aries/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-	device/xiaomi/aries/sensor00fn1a.kl:system/usr/keylayout/sensor00fn1a.kl \
-	device/xiaomi/aries/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
-	device/xiaomi/aries/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-	device/xiaomi/aries/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	device/xiaomi/aries/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
-	device/xiaomi/aries/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
-	device/xiaomi/aries/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
-	device/xiaomi/aries/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
-	device/xiaomi/aries/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
-
-# Prebuilt input device calibration files
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/touch_dev.idc:system/usr/idc/touch_dev.idc
+	device/xiaomi/aries/rootdir/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+	device/xiaomi/aries/rootdir/usr/keylayout/sensor00fn1a.kl:system/usr/keylayout/sensor00fn1a.kl \
+	device/xiaomi/aries/rootdir/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
+	device/xiaomi/aries/rootdir/usr/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+	device/xiaomi/aries/rootdir/usr/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+	device/xiaomi/aries/rootdir/usr/keylayout/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
+	device/xiaomi/aries/rootdir/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
+	device/xiaomi/aries/rootdir/usr/keychars/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
+	device/xiaomi/aries/rootdir/usr/keychars/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
+	device/xiaomi/aries/rootdir/usr/keychars/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -161,7 +160,7 @@ PRODUCT_PACKAGES += \
 # Voice processing
 PRODUCT_PACKAGES += libqcomvoiceprocessing
 PRODUCT_COPY_FILES += \
-    device/xiaomi/aries/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    device/xiaomi/aries/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_PACKAGES += \
 	hci_qcomm_init
@@ -170,8 +169,8 @@ PRODUCT_PACKAGES += \
 	power.msm8960
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/init.aries.bt.sh:system/etc/init.aries.bt.sh \
-	device/xiaomi/aries/init.aries.fm.sh:system/etc/init.aries.fm.sh
+	device/xiaomi/aries/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
+	device/xiaomi/aries/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.bt.hci_transport=smd
@@ -187,7 +186,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-        device/xiaomi/aries/gps.conf:system/etc/gps.conf
+        device/xiaomi/aries/rootdir/etc/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -209,11 +208,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	keystore.msm8960
-
-PRODUCT_PACKAGES += \
-	hostapd_default.conf \
-	wpa_supplicant_overlay.conf \
-	p2p_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
 	dualboot_init

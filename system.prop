@@ -1,0 +1,51 @@
+## GRAPHICS
+# Upto 3 layers can go through overlays
+persist.hwc.mdpcomp.enable=true
+ro.opengles.version=196608
+ro.sf.lcd_density=320
+debug.egl.recordable.rgba8888=1
+####
+
+## AUDIO
+persist.audio.fluence.mode=endfire 
+persist.audio.vr.enable=false
+persist.audio.handset.mic=digital
+af.resampler.quality=255
+mpq.audio.decode=true
+
+# Enable AAC 5.1 output
+media.aac_51_output_enabled=true
+
+# fmradio
+ro.fm.transmitter=false
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+####
+
+## RIL
+telephony.lteOnCdmaDevice=0
+ril.subscription.types=NV,RUIM
+ro.cdma.home.operator.numeric=46003
+ro.telephony.default_cdma_sub=0
+
+# Do not power down SIM card when modem is sent to Low Power Mode.
+persist.radio.apm_sim_not_pwdn=1
+
+# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
+ro.telephony.call_ring.multiple=0
+####
+
+
+# wifi
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=15
+
+# bluetooth
+ro.qualcomm.bt.hci_transport=smd
+
+# misc
+persist.omh.enabled=true
+drm.service.enabled=true
+ro.qc.sensors.wl_dis=true
+ro.qualcomm.sensors.smd=true
+persist.sys.usb.config=mtp
+ro.keep.recovery.partition=1

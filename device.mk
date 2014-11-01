@@ -99,34 +99,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=196608
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=320
-
-# Audio Configuration
-# FIXME: Remove persist.audio.handset.mic and persist.audio.fluence.mode
-#        while switching new audio HAL from legacy HAL
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.fluence.mode=endfire \
-	persist.audio.vr.enable=false \
-	persist.audio.handset.mic=digital \
-	af.resampler.quality=255 \
-	mpq.audio.decode=true
-
-
-# Do not power down SIM card when modem is sent to Low Power Mode.
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.radio.apm_sim_not_pwdn=1
-
-# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.telephony.call_ring.multiple=0
-
-#Upto 3 layers can go through overlays
-PRODUCT_PROPERTY_OVERRIDES += persist.hwc.mdpcomp.enable=true
-
 PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -172,9 +144,6 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
 	device/xiaomi/aries/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qualcomm.bt.hci_transport=smd
-
 PRODUCT_PACKAGES += \
         libmm-omxcore \
 	libdivxdrmdecrypt \
@@ -218,42 +187,6 @@ PRODUCT_PACKAGES += \
 	libqcomfm_jni \
 	FM2 \
 	FMRecord
-
-# transmitter isn't supported
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.fm.transmitter=false
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib/libril-qc-qmi-1.so
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	telephony.lteOnCdmaDevice=0 \
-	ril.subscription.types=NV,RUIM \
-	ro.cdma.home.operator.numeric=46003 \
-	ro.telephony.default_cdma_sub=0 \
-	persist.omh.enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	drm.service.enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15
-
-# Enable AAC 5.1 output
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-        debug.egl.recordable.rgba8888=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qc.sensors.wl_dis=true \
-	ro.qualcomm.sensors.smd=true
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp \
-	ro.keep.recovery.partition=1
 
 PRODUCT_PACKAGES += \
     libOmxAacEnc \

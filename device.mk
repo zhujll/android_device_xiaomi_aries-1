@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
 	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
 	$(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	$(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	$(LOCAL_PATH)/configs/thermald-aries.conf:system/etc/thermald.conf \
 	$(LOCAL_PATH)/rootdir/init.aries.rc:root/init.aries.rc \
 	$(LOCAL_PATH)/rootdir/init.aries.usb.rc:root/init.aries.usb.rc \
@@ -47,7 +47,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/ueventd.aries.rc:root/ueventd.aries.rc \
 	$(LOCAL_PATH)/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
 	$(LOCAL_PATH)/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh \
-	$(LOCAL_PATH)/rootdir/etc/gps.conf:system/etc/gps.conf \
 	$(LOCAL_PATH)/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
 	$(LOCAL_PATH)/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
 	$(LOCAL_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml \
@@ -103,8 +102,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images_aries \
-    charger_aries
+	charger_res_images_aries \
+	charger_aries
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -113,19 +112,32 @@ PRODUCT_PACKAGES += \
 	setup_fs
 
 # GPS
+PRODUCT_PACKAGES += \
+	libloc_adapter \
+	libloc_eng \
+	libloc_api_v02 \
+	libloc_ds_api \
+	libloc_core \
+	libizat_core \
+	libgeofence \
+	libgps.utils \
+	gps.msm8960 \
+	flp.msm8960
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
+	$(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
+	$(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
+	$(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
+	copybit.msm8960 \
+	gralloc.msm8960 \
+	hwcomposer.msm8960 \
 	libgenlock \
 	liboverlay \
-	hwcomposer.msm8960 \
-	gralloc.msm8960 \
-	copybit.msm8960 \
 	memtrack.msm8960 \
+	copybit.msm8960 \
 	librs_jni
 
 # Keystore
@@ -133,7 +145,7 @@ PRODUCT_PACKAGES += \
 	keystore.msm8960
 
 # Lights
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
 	lights.aries
 
 # OMX
@@ -143,12 +155,12 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libOmxVdec \
 	libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
 	libstagefrighthw \
-    libmm-omxcore
+	libmm-omxcore
 
 # Power
 PRODUCT_PACKAGES += \

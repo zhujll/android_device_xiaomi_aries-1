@@ -7,7 +7,7 @@ debug.egl.recordable.rgba8888=1
 ####
 
 ## AUDIO
-persist.audio.fluence.mode=endfire 
+persist.audio.fluence.mode=endfire
 persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 af.resampler.quality=255
@@ -41,6 +41,9 @@ wifi.supplicant_scan_interval=15
 
 # bluetooth
 ro.qualcomm.bt.hci_transport=smd
+
+# enable time services
+persist.timed.enable=true
 
 # misc
 persist.omh.enabled=true

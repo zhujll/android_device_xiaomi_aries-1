@@ -29,11 +29,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(call first-makefiles-under,$(LOCAL_PATH))
 
-include $(LOCAL_PATH)/audio/alsa_sound
-include $(LOCAL_PATH)/audio/libaudioamp
-include $(LOCAL_PATH)/bluetooth/bdAddrLoader
-include $(LOCAL_PATH)/wifi/wcnss_xiaomi
-
 # This is ugly for more reasons than I can mention. Don't think
 # that this is a good idea. It's not. It's horrible. It's truly
 # entirely horrible. It's not an elegant hack in any way.

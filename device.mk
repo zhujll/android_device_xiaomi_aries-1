@@ -75,11 +75,16 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -101,9 +106,8 @@ PRODUCT_PACKAGES += \
 	FMRecord
 
 # Charger
-PRODUCT_PACKAGES += \
-	charger_res_images_aries \
-	charger_aries
+PRODUCT_PACKAGES += \	
+	charger_res_images
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -149,22 +153,24 @@ PRODUCT_PACKAGES += \
 	lights.aries
 
 # OMX
+ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
-	libc2dcolorconvert \
+        libmm-omxcore \
 	libdivxdrmdecrypt \
-	libOmxCore \
 	libOmxVdec \
 	libOmxVenc \
+	libOmxCore \
+	libstagefrighthw \
+	libc2dcolorconvert \
 	libOmxAacEnc \
 	libOmxAmrEnc \
 	libOmxEvrcEnc \
-	libOmxQcelp13Enc \
-	libstagefrighthw \
-	libmm-omxcore
+	libOmxQcelp13Enc
+endif
 
 # Power
 PRODUCT_PACKAGES += \
-	power.msm8960
+	power.aries
 
 # QRNGD
 PRODUCT_PACKAGES += qrngd
@@ -180,7 +186,12 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
 	libwcnss_qmi \
-	wcnss_service
+	wcnss_service \
+	libwpa_client \
+	hostapd \
+	dhcpcd.conf \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -189,6 +200,11 @@ PRODUCT_PACKAGES += \
 # Dualboot
 PRODUCT_PACKAGES += \
 	syspart_select
+	
+ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+	drm.service.enabled=true
+endif
 
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_TAGS += dalvik.gc.type-precise

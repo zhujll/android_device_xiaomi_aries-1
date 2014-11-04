@@ -119,6 +119,16 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+
 # File system
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -144,23 +154,28 @@ TARGET_RECOVERY_FSTAB = device/xiaomi/aries/rootdir/fstab.aries
 BOARD_USES_SECURE_SERVICES := true
 BOARD_SEPOLICY_DIRS += device/xiaomi/aries/sepolicy
 BOARD_SEPOLICY_UNION += \
-       app.te \
-       bluetooth.te \
+       conn_init.te \
        device.te \
        domain.te \
-       drmserver.te \
        file.te \
        file_contexts \
-       hci_init.te \
-       init_shell.te \
-       keystore.te \
-       mediaserver.te \
+       hostapd.te \
        kickstart.te \
+       mediaserver.te \
+       mpdecision.te \
+       netmgrd.te \
+       property.te \
+       property_contexts \
+       qmux.te \
        rild.te \
+       rmt.te \
+       sensors.te \
        surfaceflinger.te \
-       system.te \
-       ueventd.te \
-       wpa.te
+       system_server.te \
+       tee.te \
+       te_macros \
+       thermald.te \
+       ueventd.te
 
 # Thermal
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
@@ -176,6 +191,11 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # mpdecision
 TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision/touchboost
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+MALLOC_IMPL := dlmalloc
 
 # CM Hardware
 BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw

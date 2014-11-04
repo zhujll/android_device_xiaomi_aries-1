@@ -16,6 +16,7 @@
 
 import init.aries.usb.rc
 import init.aries_svelte.rc
+import init.mako_tiny.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -45,7 +46,7 @@ on init
     # the MCC. This is needed by RIL.
     setprop persist.radio.custom_ecc "1"
     setprop persist.radio.custom_ecc_mcc "{234,235,424,426,427,430,431:999},{334:060,066},{422:9999},{730:133}"
-    setprop persist.radio.custom_ecc_mcc_ex "{450:111,112,113,119,122,125,127},{724:190}"
+    setprop persist.radio.custom_ecc_mcc_ex "{450:111,112,113,119,122,125,127},{724:190},{425:100,101,102}"
     setprop persist.radio.custom_ecc_voice "{515:117},{452:113,114,115}"
     setprop persist.radio.custom_ecc_hard "911,*911,#911,112,999,000,08,118,120,122,110,119,995,111,113,125,127,133"
 
@@ -53,7 +54,7 @@ on init
 
 on fs
     mount_all ./fstab.aries
-    restorecon /persist
+    restorecon_recursive /persist
     restorecon /persist/bluetooth
     restorecon /persist/bluetooth/.bdaddr
     restorecon /persist/playready
@@ -69,7 +70,6 @@ on fs
     restorecon /persist/widevine/5dsokxEEDXgQhkN50bp-Z2K5InM_/D3qpp0bxmJhbiZwIsCbXJ1434rc_
     restorecon /persist/wifi
     restorecon /persist/wifi/.macaddr
-    write /sys/kernel/boot_adsp/boot 1
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -150,6 +150,8 @@ on boot
     write /proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra 2
 
+    #Enable logging of the wake up reasons in the kernel log
+    write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
 # Assign TCP buffer thresholds to be ceiling value of technology maximums
 # Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max  1220608
@@ -157,13 +159,10 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    write /sys/kernel/boot_adsp/boot 1
+
     mkdir /data/media 0770 media_rw media_rw
 
-    # Create the directories used by the Wireless subsystem
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
 # to observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
@@ -232,8 +231,7 @@ on post-fs-data
     chown system system /sys/class/leds/red/device/lock
 
     # communicate with mpdecision and thermald
-    mkdir /dev/socket/mpdecision 0770 system system
-    chmod 2770 /dev/socket/mpdecision
+    mkdir /dev/socket/mpdecision 2770 root system
 
     # adjust vibrator amplitude
     write /sys/class/timed_output/vibrator/amp 90
@@ -353,6 +351,7 @@ on property:init.svc.wpa_supplicant=stopped
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
+    group system
 
 service fm_dl /system/bin/sh /system/etc/init.aries.fm.sh
     class late_start
@@ -365,6 +364,7 @@ service hciattach /system/bin/sh /system/etc/init.aries.bt.sh
     class late_start
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin system
+    seclabel u:r:bluetooth_loader:s0
     disabled
     oneshot
 
@@ -378,6 +378,7 @@ service bridgemgrd /system/bin/bridgemgrd
     class main
     user radio
     group radio
+    disabled
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
@@ -393,12 +394,12 @@ service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
 
 service netmgrd /system/bin/netmgrd
     class main
-
+    group radio
 
 service sensors /system/bin/sensors.qcom
     class late_start
     user root
-    group root
+    group root radio system
 
 service wcnss-service /system/bin/wcnss_service
     class main
@@ -409,7 +410,6 @@ service wcnss-service /system/bin/wcnss_service
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
@@ -425,7 +425,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
+    -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
@@ -468,8 +468,10 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-service charger /sbin/charger_aries
+service charger /sbin/healthd -c
     class charger
+    critical
+    seclabel u:r:healthd:s0
 
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
@@ -481,6 +483,7 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /s
 
 service thermald /system/bin/thermald
     class main
+    group radio system
 
 service time_daemon /system/bin/time_daemon
     class late_start
@@ -489,6 +492,8 @@ service time_daemon /system/bin/time_daemon
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
+    user root
+    group root system
 
 service ppd /system/bin/mm-pp-daemon
     class late_start
@@ -516,9 +521,9 @@ service bugreport /system/bin/dumpstate -d -p -B \
     keycodes 114 115 116
 
 service qseecomd /system/bin/qseecomd
-    class late_start
-    user system
-    group system
+    class core
+    user root
+    group root
 
 service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start

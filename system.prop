@@ -47,7 +47,6 @@ persist.timed.enable=true
 
 # misc
 persist.omh.enabled=true
-drm.service.enabled=true
 ro.qc.sensors.wl_dis=true
 ro.qualcomm.sensors.smd=true
 persist.sys.usb.config=mtp

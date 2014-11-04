@@ -19,8 +19,6 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/aries/init/init_aries.c
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -101,19 +99,24 @@ TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := true
 
-RECOVERY_VARIANT := cm
-BOARD_RECOVERY_SWIPE := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_aries
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 TARGET_RECOVERY_FSTAB = device/xiaomi/aries/fstab.aries
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 15728640 # 15M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640 # 15M
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912 # 512M
-
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 3758096384 # 3.5G
+BOARD_CACHEIMAGE_PARTITION_SIZE := 738197504 # 704 MByte
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
@@ -130,27 +133,35 @@ BOARD_RIL_NO_CELLINFOLIST := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
        device/xiaomi/aries/sepolicy
 
-BOARD_SEPOLICY_UNION := \
-       app.te \
-       bluetooth.te \
+BOARD_SEPOLICY_UNION += \
+       bluetooth_loader.te \
+       bridge.te \
+       camera.te \
+       conn_init.te \
        device.te \
        domain.te \
-       drmserver.te \
        file.te \
        file_contexts \
-       hci_init.te \
-       init_shell.te \
-       keystore.te \
-       mediaserver.te \
+       hostapd.te \
        kickstart.te \
+       mediaserver.te \
+       mpdecision.te \
+       netmgrd.te \
+       property.te \
+       property_contexts \
+       qmux.te \
        rild.te \
+       rmt.te \
+       sensors.te \
        surfaceflinger.te \
-       system.te \
-       ueventd.te \
-       wpa.te
+       system_server.te \
+       tee.te \
+       te_macros \
+       thermald.te \
+       ueventd.te
 
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -161,6 +172,11 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+MALLOC_IMPL := dlmalloc
 
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true

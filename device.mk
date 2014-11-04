@@ -29,11 +29,17 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
 	lights.aries
 
 PRODUCT_PACKAGES += \
-    charger_res_images_aries \
-    charger_aries
+    charger_res_images
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -61,6 +67,9 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/ueventd.aries.rc:root/ueventd.aries.rc \
 	device/xiaomi/aries/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
 	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
 
 # Prebuilt kl and kcm keymaps
@@ -94,11 +103,13 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
@@ -176,6 +187,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.bt.hci_transport=smd
 
+ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
         libmm-omxcore \
 	libdivxdrmdecrypt \
@@ -184,6 +196,7 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libstagefrighthw \
 	libc2dcolorconvert
+endif
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
@@ -216,6 +229,9 @@ PRODUCT_PACKAGES += \
 	p2p_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
+	power.aries
+
+PRODUCT_PACKAGES += \
 	dualboot_init
 
 # fmradio support
@@ -239,8 +255,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_cdma_sub=0 \
 	persist.omh.enabled=true
 
+ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \

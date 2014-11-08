@@ -80,7 +80,7 @@ USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_C2D_COMPOSITION := false
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -160,16 +160,6 @@ HAVE_ADRENO_SOURCE:= false
 EXTENDED_FONT_FOOTPRINT := true
 
 MALLOC_IMPL := dlmalloc
-
-BOARD_HAVE_LOW_LATENCY_AUDIO := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-
-#BOARD_USES_QCOM_HARDWARE := true
-#TARGET_USES_QCOM_BSP := true
-#COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
-#TARGET_QCOM_DISPLAY_VARIANT := caf
-#TARGET_QCOM_MEDIA_VARIANT := caf
-#TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 -include vendor/lge/mako/BoardConfigVendor.mk
 

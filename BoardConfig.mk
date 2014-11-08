@@ -89,7 +89,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_EGL_CFG := device/xiaomi/aries/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
-TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_C2D_COMPOSITION := false
 TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE:= false
@@ -202,3 +202,5 @@ BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw
 
 # inherit from the proprietary version
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
+
+TARGET_USES_LOGD := false

@@ -246,7 +246,8 @@ PRODUCT_PACKAGES += \
         flp.msm8960
 
 PRODUCT_PACKAGES += \
-	bdAddrLoader
+	bdAddrLoader \
+	libbt-vendor
 
 PRODUCT_PACKAGES += \
 	keystore.msm8960

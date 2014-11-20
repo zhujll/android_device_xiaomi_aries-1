@@ -21,4 +21,7 @@ allow system_server sensors_data_file:file r_file_perms;
 # Access /dev/mdm
 allow system_server radio_device:chr_file r_file_perms;
 
+# Connect to time_daemon
+allow system_server time_daemon:unix_stream_socket connectto;
+
 allow system_server self:netlink_socket create_socket_perms;

@@ -39,3 +39,5 @@ allow kickstart tombstone_data_file:file r_file_perms;
 # Investigate denial on system_data_file:dir.
 allow kickstart system_data_file:dir { write add_name remove_name };
 auditallow kickstart system_data_file:dir { write add_name remove_name };
+
+allow kickstart self:process execmem;

@@ -9,6 +9,8 @@ type kickstart_data_file, file_type, data_file_type;
 
 type mpdecision_socket, file_type;
 
+type pps_socket, file_type;
+
 # Default type for anything under /firmware
 type radio_efs_file, fs_type, contextmount_type;
 
@@ -24,3 +26,5 @@ type sysfs_mpdecision, fs_type, sysfs_type;
 type sysfs_hardware, fs_type, sysfs_type;
 
 type wcnss_ctrl, dev_type;
+
+type fm_device, dev_type;

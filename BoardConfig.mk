@@ -154,7 +154,10 @@ BOARD_SEPOLICY_UNION += \
        tee.te \
        te_macros \
        thermald.te \
-       ueventd.te
+       ueventd.te \
+       ppd.te \
+       init.te \
+       time_daemon.te
 
 
 BOARD_CHARGER_ENABLE_SUSPEND := true

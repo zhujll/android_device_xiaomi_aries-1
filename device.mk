@@ -53,7 +53,8 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/thermald-aries.conf:system/etc/thermald.conf
+	device/xiaomi/aries/thermald_h.conf:system/etc/thermald_h.conf \
+	device/xiaomi/aries/thermald_l.conf:system/etc/thermald_l.conf
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.rc:root/init.aries.rc \
@@ -262,6 +263,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Other apps
 PRODUCT_PACKAGES += \
     OmniTorch
+
+# QC Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

@@ -167,8 +167,6 @@ MALLOC_IMPL := dlmalloc
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 
-TARGET_USES_LOGD := false
-
 #TWRP config
 DEVICE_RESOLUTION := 720x1280
 BOARD_HAS_NO_REAL_SDCARD := true

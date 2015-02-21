@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.usb.rc:root/init.aries.usb.rc \
 	device/xiaomi/aries/init.recovery.aries.rc:root/init.recovery.aries.rc \
 	device/xiaomi/aries/fstab.aries:root/fstab.aries \
-	device/xiaomi/xiaomi/twrp.fstab:recovery/root/etc/twrp.fstab \
+	device/xiaomi/aries/twrp.fstab:recovery/root/etc/twrp.fstab \
 	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \

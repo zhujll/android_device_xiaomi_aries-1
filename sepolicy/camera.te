@@ -25,11 +25,3 @@ allow camera camera_data_file:file create_file_perms;
 # Connect to sensor socket (/data/app/sensor_ctl_socket)
 unix_socket_connect(camera, sensors, sensors)
 allow camera sensors_socket:sock_file read;
-
-# Allow to set flashing property
-unix_socket_connect(camera, property, init)
-allow camera camera_prop:property_service set;
-auditallow camera camera_prop:property_service set;
-
-# for /dev/kgsl-3d0
-allow camera gpu_device:chr_file rw_file_perms;

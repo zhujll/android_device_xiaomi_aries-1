@@ -22,17 +22,11 @@
 # CPU governor controls
 /dev/socket/mpdecision(/.*)?           u:object_r:mpdecision_socket:s0
 
-/dev/socket/pps(/.*)?                  u:object_r:pps_socket:s0
-/system/bin/mm-pp-daemon               u:object_r:ppd_exec:s0
-
-/dev/radio0                            u:object_r:fm_device:s0
-
 ## Radio related
 # modem driver
 /dev/mdm                               u:object_r:radio_device:s0
 # high speed inter-chip controls
 /dev/hsicctl[0-3]                      u:object_r:radio_device:s0
-/sys/devices/virtual/hsicctl/hsicctl[0-3]/modem_wait u:object_r:radio_device:s0
 # mux controller
 /dev/rmnet_mux_ctrl                    u:object_r:radio_device:s0
 # qmi protocol driver
@@ -47,8 +41,6 @@
 # Default label for shared memory drivers
 /dev/smd([0-9])+                       u:object_r:smd_device:s0
 /dev/smem_log                          u:object_r:shared_log_device:s0
-# RTC device
-/dev/rtc0                              u:object_r:rtc_device:s0
 
 # Serial console
 /dev/ttyHS0                            u:object_r:hci_attach_dev:s0
@@ -73,7 +65,6 @@
 /dev/msm_amrnb.*                   u:object_r:audio_device:s0
 /dev/msm_amrwb.*                   u:object_r:audio_device:s0
 /dev/msm_aac.*                     u:object_r:audio_device:s0
-/dev/audience_es310                u:object_r:audio_device:s0
 
 # MSM Dedicated Sensors Processor Subsystem
 /dev/msm_dsps                          u:object_r:sensors_device:s0
@@ -116,13 +107,11 @@
 /system/bin/mm-qcamera-daemon      u:object_r:camera_exec:s0
 /system/bin/qseecomd               u:object_r:tee_exec:s0
 /system/bin/conn_init              u:object_r:conn_init_exec:s0
-/system/bin/time_daemon            u:object_r:time_daemon_exec:s0
 
 # Persist firmware filesystem
 /persist(/.*)?                   u:object_r:persist_file:s0
 /persist/bluetooth(/.*)?         u:object_r:persist_bluetooth_file:s0
 /persist/sensors(/.*)?           u:object_r:persist_sensors_file:s0
-/persist/misc/sensors(/.*)?      u:object_r:persist_sensors_file:s0
 /persist/playready(/.*)?         u:object_r:persist_drm_file:s0
 /persist/widevine(/.*)?          u:object_r:persist_drm_file:s0
 /persist/wifi(/.*)?              u:object_r:persist_wifi_file:s0

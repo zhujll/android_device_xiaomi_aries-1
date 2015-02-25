@@ -323,7 +323,7 @@ on charger
     write /sys/devices/system/cpu/cpu3/online 0
 
 # Powersave
-on property:sys.perf.profile=0
+on property:persist.sys.aries.power_profile=low
     # CPU
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
@@ -341,7 +341,7 @@ on property:sys.perf.profile=0
     start thermald_l
 
 # Balanced
-on property:sys.perf.profile=1
+on property:persist.sys.aries.power_profile=middle
     # CPU
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
@@ -359,7 +359,7 @@ on property:sys.perf.profile=1
     start thermald_l
 
 # High performance
-on property:sys.perf.profile=2
+on property:persist.sys.aries.power_profile=high
     # mpdecision: disable
     stop mpdecision
     # CPU

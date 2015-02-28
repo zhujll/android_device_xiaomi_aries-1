@@ -29,13 +29,13 @@
     <ctl name="LINEOUT5 Volume" value="12" />
     <ctl name="HPHL Volume" value="12" />
     <ctl name="HPHR Volume" value="12" />
-    <ctl name="RX1 Digital Volume" value="0" />
-    <ctl name="RX2 Digital Volume" value="0" />
-    <ctl name="RX3 Digital Volume" value="0" />
-    <ctl name="RX4 Digital Volume" value="0" />
-    <ctl name="RX5 Digital Volume" value="0" />
-    <ctl name="RX6 Digital Volume" value="0" />
-    <ctl name="RX7 Digital Volume" value="0" />
+    <ctl name="RX1 Digital Volume" value="84" />
+    <ctl name="RX2 Digital Volume" value="84" />
+    <ctl name="RX3 Digital Volume" value="84" />
+    <ctl name="RX4 Digital Volume" value="84" />
+    <ctl name="RX5 Digital Volume" value="84" />
+    <ctl name="RX6 Digital Volume" value="84" />
+    <ctl name="RX7 Digital Volume" value="84" />
     <ctl name="ADC1 Volume" value="0" />
     <ctl name="ADC2 Volume" value="0" />
     <ctl name="ADC3 Volume" value="0" />
@@ -459,10 +459,10 @@
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RX3 MIX1 INP2" value="RX6" />
         <ctl name="RX4 DSM MUX" value="DSM_INV" />
-        <ctl name="RX3 Digital Volume" value="68" />
-        <ctl name="RX4 Digital Volume" value="68" />
-        <ctl name="LINEOUT1 Volume" value="66" />
-        <ctl name="LINEOUT3 Volume" value="66" />
+        <ctl name="RX3 Digital Volume" value="84" />
+        <ctl name="RX4 Digital Volume" value="84" />
+        <ctl name="LINEOUT1 Volume" value="8" />
+        <ctl name="LINEOUT3 Volume" value="8" />
         <ctl name="SLIM TX3 MUX" value="RMIX3" />
         <ctl name="SLIM TX5 MUX" value="RMIX5" />
     </path>
@@ -473,12 +473,12 @@
         <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RX2 MIX1 INP2" value="RX7" />
-        <ctl name="RX1 Digital Volume" value="62" />
-        <ctl name="RX2 Digital Volume" value="62" />
+        <ctl name="RX1 Digital Volume" value="77" />
+        <ctl name="RX2 Digital Volume" value="77" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHR DAC Switch" value="1" />
-        <ctl name="HPHL Volume" value="80" />
-        <ctl name="HPHR Volume" value="80" />
+        <ctl name="HPHL Volume" value="10" />
+        <ctl name="HPHR Volume" value="10" />
         <ctl name="SLIM TX3 MUX" value="RMIX1" />
         <ctl name="SLIM TX5 MUX" value="RMIX2" />
     </path>
@@ -487,11 +487,11 @@
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX1 MIX1 INP2" value="RX6" />
-        <ctl name="RX1 Digital Volume" value="80" />
-        <ctl name="RX6 Digital Volume" value="80" />
+        <ctl name="RX1 Digital Volume" value="99" />
+        <ctl name="RX6 Digital Volume" value="99" />
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="SLIM TX3 MUX" value="RMIX1" />
-        <ctl name="RX1 Digital Volume" value="68" />
+        <ctl name="RX1 Digital Volume" value="84" />
     </path>
 
     <!-- this needs a patch in audio HAL(platform.c), otherwise 'handset' will be chosen -->
@@ -501,15 +501,15 @@
         <ctl name="RX5 MIX1 INP1" value="RX6" />
         <ctl name="RX5 MIX1 INP2" value="RX1" />
         <ctl name="RX6 DSM MUX" value="DSM_INV" />
-        <ctl name="LINEOUT2 Volume" value="100" />
-        <ctl name="LINEOUT4 Volume" value="100" />
+        <ctl name="LINEOUT2 Volume" value="12" />
+        <ctl name="LINEOUT4 Volume" value="12" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
-        <ctl name="RX1 Digital Volume" value="78" />
-        <ctl name="RX5 Digital Volume" value="68" />
+        <ctl name="RX1 Digital Volume" value="97" />
+        <ctl name="RX5 Digital Volume" value="84" />
         <ctl name="DEC2 MUX" value="ADC5" />
-        <ctl name="DEC2 Volume" value="68" />
+        <ctl name="DEC2 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
-        <ctl name="IIR1 INP1 Volume" value="60" />
+        <ctl name="IIR1 INP1 Volume" value="74" />
         <ctl name="DAC1 Switch" value="1" />
     </path>
 
@@ -520,39 +520,39 @@
         <ctl name="RX5 MIX1 INP1" value="RX6" />
         <ctl name="RX5 MIX1 INP2" value="RX1" />
         <ctl name="RX6 DSM MUX" value="DSM_INV" />
-        <ctl name="RX5 Digital Volume" value="68" />
-        <ctl name="LINEOUT1 Volume" value="100" />
-        <ctl name="LINEOUT3 Volume" value="100" />
-        <ctl name="LINEOUT2 Volume" value="100" />
-        <ctl name="LINEOUT4 Volume" value="100" />
-        <ctl name="RX3 Digital Volume" value="82" />
-        <ctl name="RX4 Digital Volume" value="82" />
+        <ctl name="RX5 Digital Volume" value="84" />
+        <ctl name="LINEOUT1 Volume" value="12" />
+        <ctl name="LINEOUT3 Volume" value="12" />
+        <ctl name="LINEOUT2 Volume" value="12" />
+        <ctl name="LINEOUT4 Volume" value="12" />
+        <ctl name="RX3 Digital Volume" value="102" />
+        <ctl name="RX4 Digital Volume" value="102" />
         <ctl name="DEC2 MUX" value="ADC5" />
-        <ctl name="DEC2 Volume" value="68" />
+        <ctl name="DEC2 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
-        <ctl name="IIR1 INP1 Volume" value="68" />
+        <ctl name="IIR1 INP1 Volume" value="84" />
     </path>
 
     <path name="voice-headphones">
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="IIR1" />
         <ctl name="RX2 MIX1 INP1" value="IIR1" />
-        <ctl name="RX1 Digital Volume" value="72" />
-        <ctl name="RX2 Digital Volume" value="72" />
+        <ctl name="RX1 Digital Volume" value="89" />
+        <ctl name="RX2 Digital Volume" value="89" />
         <ctl name="RX5 MIX1 INP1" value="RX6" />
         <ctl name="RX5 MIX1 INP2" value="RX1" />
         <ctl name="RX6 DSM MUX" value="DSM_INV" />
-        <ctl name="RX5 Digital Volume" value="68" />
-        <ctl name="LINEOUT2 Volume" value="100" />
-        <ctl name="LINEOUT4 Volume" value="100" />
+        <ctl name="RX5 Digital Volume" value="84" />
+        <ctl name="LINEOUT2 Volume" value="12" />
+        <ctl name="LINEOUT4 Volume" value="12" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHR DAC Switch" value="1" />
-        <ctl name="HPHL Volume" value="80" />
-        <ctl name="HPHR Volume" value="80" />
+        <ctl name="HPHL Volume" value="10" />
+        <ctl name="HPHR Volume" value="10" />
         <ctl name="DEC2 MUX" value="ADC5" />
-        <ctl name="DEC2 Volume" value="68" />
+        <ctl name="DEC2 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
-        <ctl name="IIR1 INP1 Volume" value="60" />
+        <ctl name="IIR1 INP1 Volume" value="74" />
     </path>
 
     <path name="bt-sco-headset">
@@ -597,7 +597,7 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
-        <ctl name="DEC5 Volume" value="68" />
+        <ctl name="DEC5 Volume" value="84" />
         <ctl name="ADC2 Volume" value="0" />
         <ctl name="DYN MICBIAS MUX" value="MB2" />
     </path>
@@ -607,7 +607,7 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
-        <ctl name="DEC5 Volume" value="68" />
+        <ctl name="DEC5 Volume" value="84" />
         <ctl name="ADC2 Volume" value="0" />
         <ctl name="DYN MICBIAS MUX" value="MB2" />
     </path>
@@ -621,7 +621,7 @@
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
         <ctl name="ADC2 Volume" value="0" />
-        <ctl name="DEC5 Volume" value="68" />
+        <ctl name="DEC5 Volume" value="84" />
         <ctl name="DYN MICBIAS MUX" value="MB1" />
     </path>
 
@@ -636,7 +636,7 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
-        <ctl name="DEC5 Volume" value="68" />
+        <ctl name="DEC5 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
         <ctl name="DYN MICBIAS MUX" value="MB1" />
     </path>

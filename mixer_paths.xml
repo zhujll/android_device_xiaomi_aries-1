@@ -235,6 +235,10 @@
 
     <!-- OUTPUT DEVICES -->
 
+    <path name="internal_audience-loopack">
+        <ctl name="IIR1 INP1 MUX" value="DEC2" />
+    </path>
+
     <path name="speaker">
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
@@ -292,6 +296,7 @@
         <ctl name="ADC5 Volume" value="0" />
         <ctl name="IIR1 INP1 Volume" value="74" />
         <ctl name="DAC1 Switch" value="1" />
+        <path name="internal_audience-loopack" />
     </path>
 
     <path name="voice-speaker">
@@ -312,6 +317,7 @@
         <ctl name="DEC2 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
         <ctl name="IIR1 INP1 Volume" value="84" />
+        <path name="internal_audience-loopack" />
     </path>
 
     <path name="voice-headphones">
@@ -334,6 +340,7 @@
         <ctl name="DEC2 Volume" value="84" />
         <ctl name="ADC5 Volume" value="0" />
         <ctl name="IIR1 INP1 Volume" value="74" />
+        <path name="internal_audience-loopack" />
     </path>
 
     <path name="bt-sco-headset">

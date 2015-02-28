@@ -192,11 +192,12 @@ static int es310_do_route(void)
 	else
 		VNRMode = 2;
 
-	if (mMode == AUDIO_MODE_IN_CALL || mMode == AUDIO_MODE_RINGTONE
-	    || mMode == AUDIO_MODE_IN_COMMUNICATION) {
+	if (mMode == AUDIO_MODE_IN_CALL || mMode == AUDIO_MODE_IN_COMMUNICATION) {
 		// this needs a modification in platform.c, otherwise non-voice ucm rules will be selected
 		bool is_voip = (mMode == AUDIO_MODE_IN_COMMUNICATION);
+
 		switch (in_snd_device) {
+		// speaker, hdmi
 		case SND_DEVICE_IN_SPEAKER_MIC:
 		case SND_DEVICE_IN_SPEAKER_MIC_AEC:
 		case SND_DEVICE_IN_VOICE_SPEAKER_MIC:
@@ -214,6 +215,7 @@ static int es310_do_route(void)
 			    ES310_PRESET_HANDSFREE_INCALL_NB;
 			break;
 
+		// headset
 		case SND_DEVICE_IN_HEADSET_MIC:
 		case SND_DEVICE_IN_HEADSET_MIC_AEC:
 		case SND_DEVICE_IN_VOICE_HEADSET_MIC:
@@ -225,6 +227,7 @@ static int es310_do_route(void)
 			    ES310_PRESET_HEADSET_INCALL_NB;
 			break;
 
+		// handset, dmic, voice-rec, bluetooth
 		case SND_DEVICE_IN_HANDSET_MIC:
 		case SND_DEVICE_IN_HANDSET_MIC_AEC:
 		case SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC:
@@ -245,7 +248,6 @@ static int es310_do_route(void)
 		case SND_DEVICE_IN_VOICE_REC_DMIC_EF_FLUENCE:
 		case SND_DEVICE_IN_VOICE_REC_DMIC_BS_FLUENCE:
 #endif
-		case SND_DEVICE_IN_CAMCORDER_MIC:
 		case SND_DEVICE_IN_BT_SCO_MIC:
 		case SND_DEVICE_IN_BT_SCO_MIC_WB:
 		default:
@@ -257,38 +259,20 @@ static int es310_do_route(void)
 		}
 	} else {
 		switch (in_snd_device) {
-		case SND_DEVICE_IN_SPEAKER_MIC:
-		case SND_DEVICE_IN_SPEAKER_MIC_AEC:
-		case SND_DEVICE_IN_VOICE_SPEAKER_MIC:
-#ifdef AUDIO_CAF
-		case SND_DEVICE_IN_VOICE_SPEAKER_DMIC:
-		case SND_DEVICE_IN_VOICE_SPEAKER_QMIC:
-#else
-		case SND_DEVICE_IN_VOICE_SPEAKER_DMIC_EF:
-		case SND_DEVICE_IN_VOICE_SPEAKER_DMIC_BS:
-#endif
+		// HDMI
 		case SND_DEVICE_IN_HDMI_MIC:
-			dwNewPath = ES310_PATH_HANDSFREE;
+			dwNewPath = ES310_PATH_HANDSET;
 			dwNewPreset = ES310_PRESET_HANDSFREE_REC_WB;
 			break;
 
+		// bluetooth
 		case SND_DEVICE_IN_BT_SCO_MIC:
 		case SND_DEVICE_IN_BT_SCO_MIC_WB:
 			dwNewPath = ES310_PATH_HEADSET;
 			dwNewPreset = ES310_PRESET_HANDSFREE_REC_WB;
 			break;
 
-		case SND_DEVICE_IN_HEADSET_MIC:
-		case SND_DEVICE_IN_HEADSET_MIC_AEC:
-		case SND_DEVICE_IN_VOICE_HEADSET_MIC:
-		case SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC:
-		case SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC:
-			dwNewPath = ES310_PATH_HEADSET;
-			// volume is better this way
-			// dwNewPreset = ES310_PRESET_HEADSET_MIC_ANALOG_BYPASS;
-			dwNewPreset = ES310_PRESET_HANDSFREE_REC_WB;
-			break;
-
+		// voice-rec-*
 		case SND_DEVICE_IN_VOICE_REC_MIC:
 #ifdef AUDIO_CAF
 		case SND_DEVICE_IN_VOICE_REC_DMIC:
@@ -300,30 +284,25 @@ static int es310_do_route(void)
 		case SND_DEVICE_IN_VOICE_REC_DMIC_BS_FLUENCE:
 #endif
 			dwNewPath = ES310_PATH_HANDSET;
-			// recognition is better this way
 			dwNewPreset = ES310_PRESET_VOICE_RECOGNIZTION_WB;
-			//dwNewPreset = ES310_PRESET_HANDSFREE_REC_WB;
 			break;
 
+		// headset-mic
+		case SND_DEVICE_IN_HEADSET_MIC:
+		case SND_DEVICE_IN_HEADSET_MIC_AEC:
+			dwNewPath = ES310_PATH_HEADSET;
+			dwNewPreset = ES310_PRESET_HEADSET_MIC_ANALOG_BYPASS;
+			break;
 
-			//dwNewPath = ES310_PATH_HANDSET;
-			//dwNewPreset = ES310_PRESET_ANALOG_BYPASS;
-			//break;
-
+		// handset-mic, camcorder-mic, speaker-mic
 		case SND_DEVICE_IN_HANDSET_MIC:
 		case SND_DEVICE_IN_HANDSET_MIC_AEC:
 		case SND_DEVICE_IN_CAMCORDER_MIC:
-		case SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC:
-#ifdef AUDIO_CAF
-		case SND_DEVICE_IN_VOICE_DMIC:
-#else
-		case SND_DEVICE_IN_VOICE_DMIC_EF:
-		case SND_DEVICE_IN_VOICE_DMIC_BS:
-		case SND_DEVICE_IN_VOICE_DMIC_EF_TMUS:
-#endif
+		case SND_DEVICE_IN_SPEAKER_MIC:
+		case SND_DEVICE_IN_SPEAKER_MIC_AEC:
 		default:
 			dwNewPath = ES310_PATH_HANDSET;
-			dwNewPreset = ES310_PRESET_HANDSFREE_REC_WB;
+			dwNewPreset = ES310_PRESET_ANALOG_BYPASS;
 			break;
 		}
 	}

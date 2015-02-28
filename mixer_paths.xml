@@ -453,7 +453,7 @@
 
     <!-- voice-recognition mics -->
     <path name="voice-rec-mic">
-        <!-- CHECK -->
+        <path name="internal_line" />
     </path>
     <path name="voice-rec-dmic-ef">
         <!-- CHECK -->

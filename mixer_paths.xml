@@ -7,20 +7,6 @@
     <ctl name="Voice Tx Mute" value="0" />
     <ctl name="Voice Rx Volume" value="0" />
     <ctl name="TTY Mode" value="Off" />
-    <ctl name="Widevoice Enable" value="0" />
-    <ctl name="Slowtalk Enable" value="0" />
-    <ctl name="FENS Enable" value="0" />
-    <ctl name="VoLTE Rx Device Mute" value="0" />
-    <ctl name="VoLTE Tx Mute" value="0" />
-    <ctl name="VoLTE Rx Volume" value="0" />
-    <ctl name="SGLTE Rx Device Mute" value="0" />
-    <ctl name="SGLTE Tx Mute" value="0" />
-    <ctl name="SGLTE Rx Volume" value="0" />
-    <ctl name="Voip Tx Mute" value="0" />
-    <ctl name="Voip Rx Volume" value="0" />
-    <ctl name="Voip Mode Rate Config" value="12 0" />
-    <ctl name="Voip Dtx Mode" value="0" />
-    <ctl name="MICBIAS4 CAPLESS Switch" value="0" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
     <ctl name="LINEOUT1 Volume" value="12" />
     <ctl name="LINEOUT2 Volume" value="12" />
@@ -53,52 +39,15 @@
     <ctl name="DEC9 Volume" value="84" />
     <ctl name="DEC10 Volume" value="84" />
     <ctl name="IIR1 INP1 Volume" value="84" />
-    <ctl name="IIR1 INP2 Volume" value="84" />
-    <ctl name="IIR1 INP3 Volume" value="84" />
-    <ctl name="IIR1 INP4 Volume" value="84" />
     <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
     <ctl name="MICBIAS2 CAPLESS Switch" value="0" />
     <ctl name="MICBIAS3 CAPLESS Switch" value="0" />
-    <ctl name="ANC Slot" value="0" />
-    <ctl name="ANC Function" value="OFF" />
-    <ctl name="IIR1 Enable Band1" value="0" />
-    <ctl name="IIR1 Enable Band2" value="0" />
-    <ctl name="IIR1 Enable Band3" value="0" />
-    <ctl name="IIR1 Enable Band4" value="0" />
-    <ctl name="IIR1 Enable Band5" value="0" />
-    <ctl name="IIR2 Enable Band1" value="0" />
-    <ctl name="IIR2 Enable Band2" value="0" />
-    <ctl name="IIR2 Enable Band3" value="0" />
-    <ctl name="IIR2 Enable Band4" value="0" />
-    <ctl name="IIR2 Enable Band5" value="0" />
-    <ctl name="IIR1 Band1" value="0 0 0 0 0" />
-    <ctl name="IIR1 Band2" value="0 0 0 0 0" />
-    <ctl name="IIR1 Band3" value="0 0 0 0 0" />
-    <ctl name="IIR1 Band4" value="0 0 0 0 0" />
-    <ctl name="IIR1 Band5" value="0 0 0 0 0" />
-    <ctl name="IIR2 Band1" value="0 0 0 0 0" />
-    <ctl name="IIR2 Band2" value="0 0 0 0 0" />
-    <ctl name="IIR2 Band3" value="0 0 0 0 0" />
-    <ctl name="IIR2 Band4" value="0 0 0 0 0" />
-    <ctl name="IIR2 Band5" value="0 0 0 0 0" />
-    <ctl name="MI2S_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="SLIMBUS_3_RX Port Mixer INTERNAL_BT_SCO_RX" value="0" />
-    <ctl name="SLIMBUS_3_RX Port Mixer MI2S_TX" value="0" />
-    <ctl name="SLIMBUS_3_RX Port Mixer AFE_PCM_RX" value="0" />
-    <ctl name="SEC_I2S_RX Port Mixer MI2S_TX" value="0" />
-    <ctl name="HDMI_RX Port Mixer MI2S_TX" value="0" />
     <ctl name="HDMI_RX Port Mixer SLIM_3_TX" value="0" />
-    <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="0" />
-    <ctl name="AFE_PCM_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="SLIMBUS_1_RX Port Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="SLIMBUS_1_RX Port Mixer AFE_PCM_TX" value="0" />
-    <ctl name="AUXPCM_RX Port Mixer AUX_PCM_UL_TX" value="0" />
-    <ctl name="AUXPCM_RX Port Mixer SLIM_0_TX" value="0" />
-    <ctl name="SLIMBUS_0_RX Port Mixer INTERNAL_FM_TX" value="0" />
     <ctl name="SLIMBUS_0_RX Port Mixer SLIM_0_TX" value="0" />
-    <ctl name="SLIMBUS_0_RX Port Mixer AUX_PCM_UL_TX" value="0" />
-    <ctl name="SLIMBUS_0_RX Port Mixer MI2S_TX" value="0" />
+    <ctl name="SLIMBUS_0_RX Port Mixer INTERNAL_FM_TX" value="0" />
     <ctl name="SLIMBUS_3_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="SLIMBUS_1_RX Mixer Voice Stub" value="0" />
     <ctl name="STUB_RX Mixer Voice Stub" value="0" />
@@ -106,190 +55,25 @@
     <ctl name="Voice Stub Tx Mixer INTERNAL_BT_SCO_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer STUB_1_TX_HL" value="0" />
-    <ctl name="Voice Stub Tx Mixer MI2S_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer SLIM_3_TX" value="0" />
-    <ctl name="Voice Stub Tx Mixer PRIMARY_I2S_TX" value="0" />
-    <ctl name="Voice Stub Tx Mixer AFE_PCM_TX" value="0" />
-    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="SGLTE_Tx Mixer PRI_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer MI2S_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer SLIM_0_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer INTERNAL_BT_SCO_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer AFE_PCM_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer AUX_PCM_TX_SGLTE" value="0" />
-    <ctl name="SGLTE_Tx Mixer SEC_AUX_PCM_TX_SGLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer PRI_TX_VoLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer INTERNAL_BT_SCO_TX_VoLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer AUX_PCM_TX_VoLTE" value="0" />
-    <ctl name="VoLTE_Tx Mixer SEC_AUX_PCM_TX_VoLTE" value="0" />
-    <ctl name="Voip_Tx Mixer PRI_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer MI2S_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer INTERNAL_BT_SCO_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer AUX_PCM_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer SEC_AUX_PCM_TX_Voip" value="0" />
-    <ctl name="Voice_Tx Mixer PRI_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer MI2S_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer INTERNAL_BT_SCO_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer AFE_PCM_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer AUX_PCM_TX_Voice" value="0" />
-    <ctl name="Voice_Tx Mixer SEC_AUX_PCM_TX_Voice" value="0" />
-    <ctl name="MI2S_RX_Voice Mixer Voice Stub" value="0" />
-    <ctl name="HDMI_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="HDMI_RX_Voice Mixer Voip" value="0" />
-    <ctl name="HDMI_RX_Voice Mixer VoLTE" value="0" />
     <ctl name="HDMI_RX_Voice Mixer Voice Stub" value="0" />
-    <ctl name="HDMI_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="SEC_AUX_PCM_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="SEC_AUX_PCM_RX_Voice Mixer Voip" value="0" />
-    <ctl name="SEC_AUX_PCM_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="SEC_AUX_PCM_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="AUX_PCM_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="AUX_PCM_RX_Voice Mixer Voip" value="0" />
-    <ctl name="AUX_PCM_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="AUX_PCM_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="AFE_PCM_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="AFE_PCM_RX_Voice Mixer Voip" value="0" />
-    <ctl name="AFE_PCM_RX_Voice Mixer Voice Stub" value="0" />
-    <ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="AFE_PCM_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer Voip" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer Voice Stub" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="SLIM_0_RX_Voice Mixer Voip" value="0" />
-    <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="SLIM_0_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="SEC_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="SEC_RX_Voice Mixer Voip" value="0" />
-    <ctl name="SEC_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="SEC_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="PRI_RX_Voice Mixer CSVoice" value="0" />
-    <ctl name="PRI_RX_Voice Mixer Voip" value="0" />
-    <ctl name="PRI_RX_Voice Mixer VoLTE" value="0" />
-    <ctl name="PRI_RX_Voice Mixer SGLTE" value="0" />
-    <ctl name="SLIMBUS_4_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="SLIMBUS_4_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="Incall_Music Audio Mixer MultiMedia1" value="0" />
-    <ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
-    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="AUX_PCM_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="AUX_PCM_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="AUX_PCM_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="0" />
-    <ctl name="MultiMedia5 Mixer INTERNAL_FM_TX" value="0" />
-    <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia5 Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="MultiMedia4 Mixer MI2S_TX" value="0" />
-    <ctl name="MultiMedia4 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia2 Mixer INTERNAL_FM_TX" value="0" />
-    <ctl name="MultiMedia2 Mixer MI2S_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer PRI_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer MI2S_TX" value="0" />
     <ctl name="MultiMedia1 Mixer SLIM_0_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer AUX_PCM_UL_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer SEC_AUX_PCM_UL_TX" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_FM_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
-    <ctl name="MultiMedia1 Mixer VOC_REC_DL" value="0" />
-    <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
-    <ctl name="MultiMedia1 Mixer SLIM_4_TX" value="0" />
-    <ctl name="MI2S_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="MI2S_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="MI2S_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="MI2S_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="MI2S_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="HDMI Mixer MultiMedia1" value="0" />
     <ctl name="HDMI Mixer MultiMedia2" value="0" />
-    <ctl name="HDMI Mixer MultiMedia3" value="0" />
-    <ctl name="HDMI Mixer MultiMedia4" value="0" />
     <ctl name="HDMI Mixer MultiMedia5" value="0" />
-    <ctl name="HDMI Mixer MultiMedia6" value="0" />
-    <ctl name="HDMI Mixer MultiMedia7" value="0" />
-    <ctl name="HDMI Mixer MultiMedia8" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia6" value="0" />
-    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia7" value="0" />
-    <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia8" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia6" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia7" value="0" />
-    <ctl name="SEC_RX Audio Mixer MultiMedia8" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia6" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia7" value="0" />
-    <ctl name="PRI_RX Audio Mixer MultiMedia8" value="0" />
-    <ctl name="PCM_RX_DL_HL Switch" value="0" />
     <ctl name="SLIMBUS_DL_HL Switch" value="0" />
-    <ctl name="EAR_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="EAR_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="EAR_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="EAR_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="LINEOUT5_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="LINEOUT5_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="LINEOUT5_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="LINEOUT5_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="LINEOUT4_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="LINEOUT4_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="LINEOUT4_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="LINEOUT4_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="LINEOUT3_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="LINEOUT3_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="LINEOUT3_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="LINEOUT3_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="LINEOUT2_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="LINEOUT2_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="LINEOUT2_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="LINEOUT2_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="LINEOUT1_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="LINEOUT1_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="LINEOUT1_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="LINEOUT1_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="HPHR_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="HPHR_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="HPHR_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="HPHR_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="HPHL_PA_MIXER AUX_PGA_L Switch" value="0" />
-    <ctl name="HPHL_PA_MIXER AUX_PGA_R Switch" value="0" />
-    <ctl name="HPHL_PA_MIXER AUX_PGA_L_INV Switch" value="0" />
-    <ctl name="HPHL_PA_MIXER AUX_PGA_R_INV Switch" value="0" />
-    <ctl name="IIR2 INP1 MUX" value="ZERO" />
     <ctl name="IIR1 INP1 MUX" value="ZERO" />
     <ctl name="SLIM TX10 MUX" value="ZERO" />
     <ctl name="SLIM TX9 MUX" value="ZERO" />
@@ -301,9 +85,6 @@
     <ctl name="SLIM TX3 MUX" value="ZERO" />
     <ctl name="SLIM TX2 MUX" value="ZERO" />
     <ctl name="SLIM TX1 MUX" value="ZERO" />
-    <ctl name="ANC1 FB MUX" value="ZERO" />
-    <ctl name="ANC2 MUX" value="ZERO" />
-    <ctl name="ANC1 MUX" value="ZERO" />
     <ctl name="DEC10 MUX" value="ZERO" />
     <ctl name="DEC9 MUX" value="ZERO" />
     <ctl name="DEC8 MUX" value="ZERO" />

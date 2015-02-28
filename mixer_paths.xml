@@ -349,8 +349,27 @@
     </path>
 
     <path name="speaker-and-headphones">
-        <!-- CHECK -->
-        <path name="speaker" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX3 MIX1 INP2" value="RX6" />
+        <ctl name="RX3 MIX1 INP3" value="RX2" />
+        <ctl name="RX4 DSM MUX" value="DSM_INV" />
+        <ctl name="LINEOUT1 Volume" value="8" />
+        <ctl name="LINEOUT3 Volume" value="8" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RX1 MIX1 INP2" value="RX6" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RX2 MIX1 INP2" value="RX7" />
+        <ctl name="RX1 Digital Volume" value="68" />
+        <ctl name="RX2 Digital Volume" value="68" />
+        <ctl name="RX3 Digital Volume" value="89" />
+        <ctl name="RX4 Digital Volume" value="89" />
+        <ctl name="HPHL DAC Switch" value="1" />
+        <ctl name="HPHR DAC Switch" value="1" />
+        <ctl name="HPHL Volume" value="10" />
+        <ctl name="HPHR Volume" value="10" />
+        <ctl name="SLIM TX3 MUX" value="RMIX1" />
+        <ctl name="SLIM TX5 MUX" value="RMIX2" />
     </path>
 
     <path name="speaker-and-usb-headphones">

@@ -127,6 +127,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.audio.fluence.mode=endfire \
 	persist.audio.lowlatency.rec=false
 
+#
+# Disable boot timeout for external modems.
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.mdm.timeout_disable=1
 
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \

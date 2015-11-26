@@ -284,11 +284,8 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth wakelock gps
 
 service mdm_helper /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
-    class core
-    user system
-    group system
-#    seclabel u:object_r:mdm_helper_exec:s0
     oneshot
+    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -383,3 +380,7 @@ service diag_mdlog /system/bin/diag_mdlog -s 100
 
 # on property:gsm.sim.state=READY
 #    start diag_mdlog
+
+#Disable boot timeout for external modems.
+on property:persist.sys.mdm.timeout_disable=1
+     write /sys/module/mdm_common/parameters/disable_boot_timeout 1

@@ -64,6 +64,8 @@ persist.timed.enable=true
 
 # System props for audio
 persist.audio.fluence.mode=endfire
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.speaker=true
 persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 persist.audio.lowlatency.rec=false

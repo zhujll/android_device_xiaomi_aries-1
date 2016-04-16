@@ -1,5 +1,5 @@
 #
-# Copyright 2012 The Android Open Source Project
+# Copyright 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, device/xiaomi/aries/full_aries.mk)
 
-add_lunch_combo aosp_aries-userdebug
-add_lunch_combo mk_aries-eng
-add_lunch_combo mk_aries-userdebug
+PRODUCT_NAME := mk_aries

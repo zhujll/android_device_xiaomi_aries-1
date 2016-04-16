@@ -17,7 +17,7 @@
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/aries/init/init_aries.c
+TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/aries/init/init_aries.cpp
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -125,40 +125,9 @@ BOARD_RIL_NO_CELLINFOLIST := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
-BOARD_SEPOLICY_DIRS += \
-       device/xiaomi/aries/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-       bluetooth_loader.te \
-       bridge.te \
-       camera.te \
-       conn_init.te \
-       device.te \
-       domain.te \
-       file.te \
-       file_contexts \
-       hostapd.te \
-       kickstart.te \
-       mediaserver.te \
-       mpdecision.te \
-       netmgrd.te \
-       property.te \
-       property_contexts \
-       qmux.te \
-       rild.te \
-       rmt.te \
-       sensors.te \
-       surfaceflinger.te \
-       system_app.te \
-       system_server.te \
-       tee.te \
-       te_macros \
-       thermald.te \
-       ueventd.te \
-       ppd.te \
-       init.te \
-       time_daemon.te
-
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -178,6 +147,16 @@ MALLOC_IMPL := dlmalloc
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw/
+BOARD_HARDWARE_CLASS := device/xiaomi/aries/mkhw/
 
 TARGET_USES_LOGD := false
+
+## TWRP 
+#DEVICE_RESOLUTION := 720x1280
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TW_FLASH_FROM_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true

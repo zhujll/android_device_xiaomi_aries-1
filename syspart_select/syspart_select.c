@@ -23,6 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <errno.h>
+#include <string.h>
 
 #define INFO(x...)    KLOG_INFO(LOG_TAG, x)
 #define ERROR(x...)   KLOG_ERROR(LOG_TAG, x)

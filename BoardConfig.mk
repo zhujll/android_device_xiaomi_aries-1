@@ -16,8 +16,8 @@
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/aries/init/init_aries.c
+TARGET_INIT_VENDOR_LIB := libinit_aries
+
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
@@ -147,35 +147,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
-TARGET_RECOVERY_UI_LIB := librecovery_ui_aries
 TARGET_RECOVERY_FSTAB = device/xiaomi/aries/rootdir/fstab.aries
 
 # SELinux
-BOARD_USES_SECURE_SERVICES := true
-BOARD_SEPOLICY_DIRS += device/xiaomi/aries/sepolicy
-BOARD_SEPOLICY_UNION += \
-       conn_init.te \
-       device.te \
-       domain.te \
-       file.te \
-       file_contexts \
-       hostapd.te \
-       kickstart.te \
-       mediaserver.te \
-       mpdecision.te \
-       netmgrd.te \
-       property.te \
-       property_contexts \
-       qmux.te \
-       rild.te \
-       rmt.te \
-       sensors.te \
-       surfaceflinger.te \
-       system_server.te \
-       tee.te \
-       te_macros \
-       thermald.te \
-       ueventd.te
+#include device/qcom/sepolicy/sepolicy.mk
 
 # Thermal
 BOARD_USES_EXTRA_THERMAL_SENSOR := true

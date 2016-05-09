@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
 	FMRecord
 
 # Charger
-PRODUCT_PACKAGES += \	
+
+PRODUCT_PACKAGES += \
 	charger_res_images
 
 # Filesystem management tools

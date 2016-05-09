@@ -1,5 +1,6 @@
 #
 # Copyright 2012 The Android Open Source Project
+# Copyright 2016 sndnvaps<sndnvaps@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,5 +15,18 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_aries-eng
-add_lunch_combo cm_aries-eng
+ifeq ($(TARGET_INIT_VENDOR_LIB),libinit_aries)
+
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := init_aries.cpp \
+			init_msm.c
+LOCAL_C_INCLUDES = system/core/init
+LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := libinit_aries
+include $(BUILD_STATIC_LIBRARY)
+
+endif

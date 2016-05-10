@@ -151,11 +151,6 @@ on post-fs-data
 # to observe dnsmasq.leases file for dhcp information of soft ap.
     chown dhcp system /data/misc/dhcp
 
-    mkdir /data/misc/playready
-    restorecon /data/misc/playready
-    mkdir /data/misc/tzapps
-    restorecon /data/misc/tzapps
-
     chown system system /dev/wcnss_wlan
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
@@ -264,7 +259,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
-    write /dev/cpuctl/apps/cpu.notify_on_migrate 1
+    write /dev/cpuctl/cpu.notify_on_migrate 1
 
     # Chown cpu online files as needed for the Settings app
     chown system system /sys/devices/system/cpu/cpu1/online
@@ -302,6 +297,9 @@ on post-fs-data
     restorecon /sys/devices/platform/mipi_hitachi.2049/cabc
     restorecon /sys/devices/platform/mipi_hitachi.2049/ce
     restorecon /sys/devices/i2c-3/3-004b/disable_keys
+
+    # disable diag port
+    rm /dev/diag
 
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
@@ -491,6 +489,13 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user camera
     group camera system inet input
 
+service wcnss_init /system/bin/sh /system/etc/init.aries.wifi.sh
+    class late_start
+    user system
+    group system wifi
+    seclabel u:r:conn_init:s0
+    oneshot
+
 service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
     class main
     user bluetooth
@@ -514,10 +519,37 @@ service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start
     disabled
 
-service qrngd /system/bin/qrngd -f
-    class main
-    user root
-    group root
+# CyanogenMod Performance Profiles
+# Powersave
+on property:sys.perf.profile=0
+    start mpdecision
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
+    write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor "ondemand"
+
+# Balanced
+on property:sys.perf.profile=1
+    start mpdecision
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "ondemand"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "ondemand"
+    write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor "ondemand"
+
+# Performance
+on property:sys.perf.profile=2
+    stop mpdecision
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "performance"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "performance"
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "performance"
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "performance"
+    write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor "performance"
 
 # on property:gsm.sim.state=READY
 #    start diag_mdlog

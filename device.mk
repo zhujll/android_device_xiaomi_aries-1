@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/ueventd.aries.rc:root/ueventd.aries.rc \
 	$(LOCAL_PATH)/rootdir/etc/init.aries.bt.sh:system/etc/init.aries.bt.sh \
 	$(LOCAL_PATH)/rootdir/etc/init.aries.fm.sh:system/etc/init.aries.fm.sh \
-	$(LOCAL_PATH)/recovery/init.recovery.aries.rc:root/init.recovery.aries.rc \
 	$(LOCAL_PATH)/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
 	$(LOCAL_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml \
 	$(LOCAL_PATH)/rootdir/usr/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \

@@ -30,7 +30,8 @@ TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=aries lpj=67677 user_debug=31 lge.kcal=0|0|0|x
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=aries lpj=67677 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lge.kcal=0|0|0|x
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
@@ -127,7 +128,10 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
+
+#BOARD_SEPOLICY_DIRS += \
+    device/xiaomi/aries/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -153,6 +157,7 @@ TARGET_USES_LOGD := false
 
 ## TWRP 
 #DEVICE_RESOLUTION := 720x1280
+# RECOVERY_VARIANT :=twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_FLASH_FROM_STORAGE := true
@@ -160,3 +165,6 @@ TW_INTERNAL_STORAGE_PATH := "/data/media/0"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_TARGET_USES_QCOM_BSP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+## AnyKernel 
+AK_BOOT_BLOCK := \/dev\/block\/platform\/msm_sdcc.1\/by-name\/boot

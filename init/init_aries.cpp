@@ -102,7 +102,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
 
     property_set("ro.product.device", "aries");
-    property_set("ro.build.description", "aries-user 5.0.1 LRX22C 1602158 release-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/aries/aries:5.0.1/LRX22C/1602158:user/release-keys");
+    property_set("ro.build.description", "mk_aries-eng 6.0.1 MMB29V ccc91657bc test-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/mk_aries/aries:6.0.1/MMB29V/ccc91657bc:eng/test-keys");
 
 }

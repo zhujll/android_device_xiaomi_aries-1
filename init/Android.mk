@@ -20,9 +20,14 @@ ifneq ($(filter aries aries,$(TARGET_DEVICE)),)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := init_aries.cpp
+LOCAL_SRC_FILES := 	\
+		init_msm.cpp \
+		init_aries.cpp 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)
 LOCAL_STATIC_LIBRARIES := liblog libc libcutils
+LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
+LOCAL_C_INCLUDES += \
+	system/core/init
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := init_msm
 include $(BUILD_STATIC_LIBRARY)

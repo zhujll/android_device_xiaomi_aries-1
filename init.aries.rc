@@ -26,6 +26,9 @@ on early-init
     write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
 
 on init
+    # Use this trick to get a running rild
+    export LD_SHIM_LIBS /system/lib/libril.so|libril_shim.so
+
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /storage 0775 system system
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw

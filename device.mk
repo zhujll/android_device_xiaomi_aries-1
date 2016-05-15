@@ -39,6 +39,10 @@ PRODUCT_PACKAGES := \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# RIL
+PRODUCT_PACKAGES += \
+	libril_shim
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
         LiveWallpapers \

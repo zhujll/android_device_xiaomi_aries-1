@@ -35,8 +35,10 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
+TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CONFIG := cyanogen_aries_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -130,7 +132,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
 
-#BOARD_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS += \
     device/xiaomi/aries/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true

@@ -143,3 +143,4 @@ vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 vendor/lib/libtime_genoff.so
+vendor/lib/libdiag.so

@@ -174,3 +174,6 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 ## AnyKernel 
 AK_BOOT_BLOCK := \/dev\/block\/platform\/msm_sdcc.1\/by-name\/boot
+
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/aries/include

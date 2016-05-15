@@ -41,7 +41,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-	libril_shim
+	libril_shim \
+	libshim_boringssl
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \

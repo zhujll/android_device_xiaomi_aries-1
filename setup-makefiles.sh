@@ -101,5 +101,26 @@ LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include \$(BUILD_PREBUILT)
 
+ifeq (\$(BOARD_PROVIDES_RILD),true)
+include \$(CLEAR_VARS)
+LOCAL_MODULE := rild
+LOCAL_MODULE_OWNER := qcom
+LOCAL_SRC_FILES := proprietary/bin/rild
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS :=  EXECUTABLES
+include \$(BUILD_PREBUILT)
+endif
+
+ifeq (\$(BOARD_PROVIDES_LIBRIL),true)
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libril
+LOCAL_MODULE_OWNER := qcom
+LOCAL_SRC_FILES := proprietary/lib/libril.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include \$(BUILD_PREBUILT)
+endif
+
 endif
 EOF

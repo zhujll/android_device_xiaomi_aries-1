@@ -42,7 +42,9 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	libril_shim \
-	libshim_boringssl
+	libshim_boringssl \
+	libstlport
+	
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -50,6 +52,17 @@ PRODUCT_PACKAGES += \
         LiveWallpapersPicker \
         VisualizationWallpapers \
         librs_jni
+
+PRODUCT_PACKAGES += \
+	libtinyxml
+
+#QCOM Camera
+PRODUCT_COPY_FILES += \
+	device/xiaomi/aries/prebuilts/libqc-opt.so:system/vendor/lib/libqc-opt.so \
+	device/xiaomi/aries/prebuilts/libmm-abl.so:system/lib/libmm-abl.so \
+	device/xiaomi/aries/prebuilts/libmm-abl-oem.so:system/lib/libmm-abl-oem.so 
+	
+	
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \

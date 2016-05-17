@@ -54,7 +54,8 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 PRODUCT_PACKAGES += \
-	libtinyxml
+	libtinyxml \
+	org.apache.http.legacy
 
 #QCOM Camera
 PRODUCT_COPY_FILES += \

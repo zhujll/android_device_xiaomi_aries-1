@@ -27,7 +27,7 @@ on early-init
 
 on init
     # Use this trick to get a running rild
-    export LD_SHIM_LIBS /system/lib/libril.so|libril_shim.so:/system/vendor/lib/egl/libEGL_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so|libshim_boringssl.so
+    export LD_SHIM_LIBS "/system/lib/libril.so|libril_shim.so:/system/vendor/lib/egl/libEGL_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so|libshim_boringssl.so"
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /storage 0775 system system
@@ -61,6 +61,16 @@ on init
 on fs
     mount_all ./fstab.aries
     restorecon_recursive /persist
+    mkdir /persist/property
+    chmod 0775 /persist/property
+
+    chown system system /dev/ramdump_dsps
+    chown system system /dev/ramdump_lpass
+    chown system system /dev/ramdump_riva
+    chown system system /dev/ramdump_smem-dsps
+    chown system system /dev/ramdump_modem_fw
+    chown system system /dev/ramdump_modem_sw
+    chown system system /dev/ramdump_smem-modem
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB

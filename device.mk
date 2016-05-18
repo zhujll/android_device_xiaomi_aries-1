@@ -57,13 +57,7 @@ PRODUCT_PACKAGES += \
 	libtinyxml \
 	org.apache.http.legacy
 
-#QCOM Camera
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/prebuilts/libqc-opt.so:system/vendor/lib/libqc-opt.so \
-	device/xiaomi/aries/prebuilts/libmm-abl.so:system/lib/libmm-abl.so \
-	device/xiaomi/aries/prebuilts/libmm-abl-oem.so:system/lib/libmm-abl-oem.so 
-	
-	
+
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \

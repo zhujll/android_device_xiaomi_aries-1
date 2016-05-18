@@ -145,8 +145,10 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# QCOM Camera
 USE_DEVICE_SPECIFIC_CAMERA:= true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
+V4L2_BASED_LIBCAM := true
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 

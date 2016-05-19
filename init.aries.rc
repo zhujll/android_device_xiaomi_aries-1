@@ -431,10 +431,8 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
-    class core
-    user system
-    group system
     oneshot
+    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -580,6 +578,22 @@ service qseecomd /system/bin/qseecomd
     class core
     user root
     group root
+
+# Start kickstart if mdm is detected
+on property:ro.baseband=mdm
+     mkdir /data/qcks 0770 system system
+     start kickstart
+
+service dpmd /system/bin/dpmd
+     class late_start
+     socket dpmd stream 660 root system
+
+
+#Disable boot timeout for external modems.
+on property:persist.sys.mdm.timeout_disable=1
+    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+
+
 
 service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start

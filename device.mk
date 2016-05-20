@@ -214,7 +214,6 @@ PRODUCT_PACKAGES += \
 	power.aries
 
 PRODUCT_PACKAGES += \
-	syspart_select \
 	resize2fs_static
 
 # fmradio support

@@ -149,3 +149,5 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libdiag.so
+vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L1.so

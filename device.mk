@@ -157,7 +157,8 @@ PRODUCT_PACKAGES += \
 	hci_qcomm_init
 
 PRODUCT_PACKAGES += \
-	power.msm8960
+	power.msm8960 \
+	libalsa-intf
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.bt.sh:system/etc/init.aries.bt.sh

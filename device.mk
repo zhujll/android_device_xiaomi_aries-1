@@ -79,6 +79,7 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.usb.rc:root/init.aries.usb.rc \
 	device/xiaomi/aries/fstab.aries:root/fstab.aries \
 	device/xiaomi/aries/ueventd.aries.rc:root/ueventd.aries.rc \
+	device/xiaomi/aries/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
 	device/xiaomi/aries/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
 	device/xiaomi/aries/media_profiles.xml:system/etc/media_profiles.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

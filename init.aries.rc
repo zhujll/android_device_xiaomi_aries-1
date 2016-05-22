@@ -76,6 +76,11 @@ on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+service modem-sh /system/bin/sh /system/etc/init.qcom.modem_links.sh
+          class core
+          user root
+          oneshot
+
 on boot
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -212,7 +217,8 @@ on post-fs-data
 
     # kickstart
     mkdir /data/qcks 0770 system system
-    chown system /dev/block/platform/msm_sdcc.1/by-name
+    mount tmpfs tmpfs /data/qcks size=20m,mode=0750,gid=1000
+    #chown system /dev/block/platform/msm_sdcc.1/by-name
     #mkdir /data/tombstones/mdm 0770 system system
 
     setprop vold.post_fs_data_done 1

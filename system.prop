@@ -161,3 +161,7 @@ testing.mediascanner.skiplist=/storage/sdcard0/Android/,/storage/sdcard0/MIUI/br
 
 # Stop the QC-QMI message spam
 persist.data.qmi.adb_logmask=0
+
+#modem
+ro.baseband=mdm
+persist.sys.mdm.timeout_disable=1

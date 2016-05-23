@@ -133,16 +133,16 @@ BOARD_RIL_NO_CELLINFOLIST := true
 TARGET_RIL_VARIANT := caf
 #BOARD_PROVIDES_LIBRIL := true
 
-TARGET_QCOM_DISPLAY_VARIANT := caf
+#TARGET_QCOM_DISPLAY_VARIANT := caf
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-    device/xiaomi/aries/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    device/xiaomi/aries/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -164,7 +164,7 @@ MALLOC_IMPL := dlmalloc
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-BOARD_HARDWARE_CLASS := device/xiaomi/aries/mkhw/
+BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw/
 
 TARGET_USES_LOGD := false
 

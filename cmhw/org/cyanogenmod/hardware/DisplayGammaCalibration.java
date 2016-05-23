@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.mokee.hardware;
+package org.cyanogenmod.hardware;
 
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 
-import org.mokee.hardware.util.FileUtils;
+import org.cyanogenmod.hardware.util.FileUtils;
 
 import java.io.File;
 

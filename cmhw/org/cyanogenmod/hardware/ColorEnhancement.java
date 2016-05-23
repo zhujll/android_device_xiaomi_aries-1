@@ -14,51 +14,51 @@
  * limitations under the License.
  */
 
-package org.mokee.hardware;
+package org.cyanogenmod.hardware;
 
-import org.mokee.hardware.util.FileUtils;
+import org.cyanogenmod.hardware.util.FileUtils;
 
 import java.io.File;
 
 /**
- * Adaptive backlight support (this refers to technologies like NVIDIA SmartDimmer,
- * QCOM CABL or Samsung CABC).
+ * Color enhancement support
  */
-public class AdaptiveBacklight {
+public class ColorEnhancement {
 
-    private static String FILE_CABC = "/sys/devices/platform/mipi_hitachi.2049/cabc";
+    private static String FILE_CE = "/sys/devices/platform/mipi_hitachi.2049/ce";
 
     /**
-     * Whether device supports an adaptive backlight technology.
+     * Whether device supports an color enhancement technology.
      *
      * @return boolean Supported devices must return always true
      */
     public static boolean isSupported() {
-        return new File(FILE_CABC).exists();
+        return new File(FILE_CE).exists();
     }
 
     /**
-     * This method return the current activation status of the adaptive backlight technology.
+     * This method return the current activation status of the color enhancement technology.
      *
-     * @return boolean Must be false when adaptive backlight is not supported or not activated, or
+     * @return boolean Must be false when color enhancement is not supported or not activated, or
      * the operation failed while reading the status; true in any other case.
      */
     public static boolean isEnabled() {
-        return Integer.parseInt(FileUtils.readOneLine(FILE_CABC)) == 1;
+        return Integer.parseInt(FileUtils.readOneLine(FILE_CE)) == 1;
     }
 
     /**
-     * This method allows to setup adaptive backlight technology status.
+     * This method allows to setup color enhancement technology status.
      *
-     * @param status The new adaptive backlight status
+     * @param status The new color enhancement status
      * @return boolean Must be false if adaptive backlight is not supported or the operation
      * failed; true in any other case.
      */
     public static boolean setEnabled(boolean status) {
         if (status == true) {
-            return FileUtils.writeLine(FILE_CABC, "1");
+            return FileUtils.writeLine(FILE_CE, "1");
         } else {
-            return FileUtils.writeLine(FILE_CABC, "0");
+            return FileUtils.writeLine(FILE_CE, "0");
         }
     }
+
 }

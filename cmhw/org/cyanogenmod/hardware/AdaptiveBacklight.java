@@ -16,7 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.util.FileUtils;
+import org.cyanogenmod.hardware.util.FileUtils;
 
 import java.io.File;
 

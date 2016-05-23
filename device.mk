@@ -169,7 +169,8 @@ PRODUCT_PACKAGES += \
 	camera.aries \
 	camera.msm8960 \
 	libmmcamera_interface2 \
-	libmmcamera_interface
+	libmmcamera_interface \
+	Camera2
 
 PRODUCT_PACKAGES += \
         libmm-omxcore \

@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	libshim_ril \
+	libshim_qmi \
 	libshim_boringssl \
 	libstlport
 	

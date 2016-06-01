@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
 	libshim_ril \
 	libshim_qmi \
 	libshim_boringssl \
-	libstlport
+	libstlport \
+	libxml2
 	
 
 # Live Wallpapers
@@ -88,6 +89,11 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
 
+# Charger
+PRODUCT_COPY_FILES += \
+    device/xiaomi/aries/chargeonlymode:root/sbin/chargeonlymode
+
+
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
@@ -128,7 +134,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
-	librs_jni \
 	com.android.future.usb.accessory
 
 # Filesystem management tools

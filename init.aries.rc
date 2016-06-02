@@ -27,7 +27,7 @@ on early-init
 
 on init
     # Use this trick to get a running rild
-    export LD_SHIM_LIBS "/system/lib/libril.so|libshim_ril.so:/system/lib/libril-qc-qmi-1.so|libshim_qmi.so:/system/vendor/lib/egl/libEGL_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so|libshim_boringssl.so"
+    export LD_SHIM_LIBS "/system/vendor/lib/egl/libEGL_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so|libshim_boringssl.so"
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /storage 0775 system system
@@ -440,8 +440,10 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
+    class core
+    user system
+    group system radio
     oneshot
-    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -600,8 +602,8 @@ service dpmd /system/bin/dpmd
 
 
 #Disable boot timeout for external modems.
-on property:persist.sys.mdm.timeout_disable=1
-    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+#on property:persist.sys.mdm.timeout_disable=1
+#    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
 
 

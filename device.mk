@@ -30,11 +30,11 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
 	lights.aries \
-    libwpa_client \
-    hostapd \
-    dhcpcd.conf \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    	libwpa_client \
+    	hostapd \
+    	dhcpcd.conf \
+    	wpa_supplicant \
+    	wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	libshim_ril \
-	libshim_qmi \
 	libshim_boringssl \
 	libstlport \
 	libxml2

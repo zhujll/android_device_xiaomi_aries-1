@@ -11,15 +11,6 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
-    qc_qmi-1_shim.cpp
-LOCAL_SHARED_LIBRARIES := libbinder
-LOCAL_MODULE := libshim_qmi
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
-
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
     	boringssl-compat/bio_b64.c \
 	boringssl-compat/p_dec.c \
 	boringssl-compat/p_enc.c \

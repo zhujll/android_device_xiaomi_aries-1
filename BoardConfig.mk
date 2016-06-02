@@ -88,7 +88,7 @@ TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
+#TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)

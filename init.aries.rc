@@ -440,10 +440,8 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
-    class core
-    user system
-    group system radio
     oneshot
+    disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -601,9 +599,9 @@ service dpmd /system/bin/dpmd
      socket dpmd stream 660 root system
 
 
-#Disable boot timeout for external modems.
-#on property:persist.sys.mdm.timeout_disable=1
-#    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+Disable boot timeout for external modems.
+on property:persist.sys.mdm.timeout_disable=1
+    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
 
 

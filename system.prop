@@ -159,8 +159,8 @@ persist.sys.aries.power_profile=middle
 #add mediascanner skip list
 testing.mediascanner.skiplist=/storage/sdcard0/Android/,/storage/sdcard0/MIUI/browser/.readmode/
 
-# Stop the QC-QMI message spam
-persist.data.qmi.adb_logmask=0
+# Enable QC-QMI message 
+persist.data.qmi.adb_logmask=1
 
 #modem
 ro.baseband=mdm

@@ -139,7 +139,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/Android.mk
 
 #BOARD_SEPOLICY_DIRS += \
 #    device/xiaomi/aries/sepolicy

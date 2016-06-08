@@ -2,15 +2,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
-    rild_shim.cpp
-LOCAL_SHARED_LIBRARIES := libbinder
-LOCAL_MODULE := libshim_ril
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
-
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
     	boringssl-compat/bio_b64.c \
 	boringssl-compat/p_dec.c \
 	boringssl-compat/p_enc.c \
@@ -20,4 +11,44 @@ LOCAL_SRC_FILES := \
 LOCAL_SHARED_LIBRARIES := liblog libcrypto
 LOCAL_MODULE := libshim_boringssl
 LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
+# camera
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+     gui/SensorManager.cpp \
+     ui/GraphicBuffer.cpp \
+     ui/GraphicBufferAllocator.cpp \
+     ui/GraphicBufferMapper.cpp \
+     MemoryHeapPmem.cpp \
+     MemoryBase.c \
+     SharedBuffer.cpp \
+     VectorImpl.cpp
+
+LOCAL_C_INCLUDES += external/safe-iop/include
+
+LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware libui libgui libbinder libutils libsync
+
+LOCAL_MODULE := libshim_camera
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
+# sensors
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+     sensors.c \
+     SharedBuffer.cpp \
+     VectorImpl.cpp
+
+LOCAL_C_INCLUDES += external/safe-iop/include
+LOCAL_SHARED_LIBRARIES := liblog
+
+LOCAL_MODULE := libshim_sensors
+LOCAL_MODULE_TAGS := optional
+
 include $(BUILD_SHARED_LIBRARY)

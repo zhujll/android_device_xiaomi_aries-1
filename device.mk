@@ -41,7 +41,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-	libshim_ril \
 	libshim_boringssl \
 	libstlport \
 	libxml2
@@ -86,7 +85,8 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml
+	device/xiaomi/aries/media_codecs.xml:system/etc/media_codecs.xml \
+	device/xiaomi/aries/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # Charger
 PRODUCT_COPY_FILES += \
@@ -172,10 +172,8 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
-	camera.aries \
 	camera.msm8960 \
-	libmmcamera_interface2 \
-	libmmcamera_interface
+	libshim_camera
 
 PRODUCT_PACKAGES += \
         libmm-omxcore \

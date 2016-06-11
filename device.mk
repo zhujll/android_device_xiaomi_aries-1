@@ -242,6 +242,9 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxQcelp13Enc
 
+# for mm-camera
+# libchromatix_s5k3h7a_preview.so
+
 # QRNGD
 PRODUCT_PACKAGES += qrngd
 

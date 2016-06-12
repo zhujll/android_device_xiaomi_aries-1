@@ -195,3 +195,6 @@ TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/aries/include
 
 ## AnyRecoveryZip
 TARGET_BUILD_REC_ZIP := true
+
+# For MultiRom
+-include device/xiaomi/aries/mrom.mk

@@ -178,7 +178,8 @@ TARGET_USES_LOGD := false
 
 ## TWRP 
 #DEVICE_RESOLUTION := 720x1280
-RECOVERY_VARIANT :=twrp
+# RECOVERY_VARIANT :=twrp
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_FLASH_FROM_STORAGE := true
@@ -197,4 +198,4 @@ TARGET_SPECIFIC_HEADER_PATH := device/xiaomi/aries/include
 TARGET_BUILD_REC_ZIP := true
 
 # For MultiRom
--include device/xiaomi/aries/mrom.mk
+include device/xiaomi/aries/mrom.mk

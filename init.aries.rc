@@ -15,8 +15,6 @@
 #
 
 import init.aries.usb.rc
-import init.aries_svelte.rc
-import init.aries_tiny.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug

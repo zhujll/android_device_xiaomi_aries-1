@@ -26,6 +26,8 @@ const char *mr_init_devices[] =
     "/sys/module/mmc_core",
     "/sys/module/mmcblk",
 
+    //for gpio key
+    // volumeup ,volumedown
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
     "/sys/devices/platform/msm_ssbi.0/pm8921-core/pm8xxx-keypad/input*",
@@ -35,6 +37,17 @@ const char *mr_init_devices[] =
     "/sys/class/input",
     "/sys/class/input/input6",
     "/sys/class/input/event6",
+
+    //for touch key on screen
+    "/sys/class/input/input1",
+    "/sys/devices/sensor00/input/input1",
+    "/sys/devices/sensor00/input/input1/event1",
+
+
+    // for touch screen event2
+    "/sys/class/input/input2",
+    "/sys/devices/sensor00/input/input2",
+    "/sys/devices/sensor00/input/input2/event2",
 
     // for adb
     "/sys/class/tty/ptmx",

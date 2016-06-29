@@ -186,16 +186,7 @@ BOARD_HARDWARE_CLASS := device/xiaomi/aries/mkhw/
 TARGET_USES_LOGD := false
 
 ## TWRP 
-#DEVICE_RESOLUTION := 720x1280
 # RECOVERY_VARIANT :=twrp
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_THEME := portrait_hdpi
-RECOVERY_SDCARD_ON_DATA := true
-TW_FLASH_FROM_STORAGE := true
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_TARGET_USES_QCOM_BSP := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 ## AnyKernel 
 AK_BOOT_BLOCK := \/dev\/block\/platform\/msm_sdcc.1\/by-name\/boot

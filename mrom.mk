@@ -1,5 +1,17 @@
 #MultiROM config. MultiROM also uses parts of TWRP config
+
+# for twrp
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 DEVICE_RESOLUTION := 768x1280
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TW_FLASH_FROM_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+# for multirom twrp
 TARGET_RECOVERY_IS_MULTIROM := true
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/xiaomi/aries/mrom/mr_init_devices.c
@@ -9,9 +21,11 @@ MR_DPI_FONT := 216
 MR_FSTAB := device/xiaomi/aries/mrom/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x85000000
 MR_INFOS := device/xiaomi/aries/mrom_infos
-MR_PIXEL_FORMAT := "RGBX_8888"
-CMDLINE_FOR_HARDBOOT := console=ttyHSL0,115200,n8 androidboot.hardware=aries lpj=67677 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lge.kcal=0|0|0|x root=mmcblk0
-# ./kexec --load-hardboot ../zImage --mem-min=0x85000000 --atags-addr=0x80200100 --command-line='console=ttyHSL0,115200,n8 androidboot.hardware=aries lpj=67677 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lge.kcal=0|0|0|x root=mmcblk0'
-
+#MR_DISABLE_ALPHA := true
+#MR_PIXEL_FORMAT := "RGBX_8888"
+MR_QCOM_OVERLAY_USE_VSYNC := true
+MR_USE_QCOM_OVERLAY := true
+MR_QCOM_OVERLAY_HEADER := device/xiaomi/aries/mrom/mr_qcom_overlay.h
+MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
 # atags-addr=0x80200100
 

@@ -36,7 +36,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 
-TARGET_USE_PREBUILT_KERNEL := true
+#TARGET_USE_PREBUILT_KERNEL := true
 
 ifneq ($(TARGET_USE_PREBUILT_KERNEL),true)
 # Try to build the kernel

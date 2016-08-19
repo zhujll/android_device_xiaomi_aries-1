@@ -22,7 +22,11 @@ MR_FSTAB := device/xiaomi/aries/mrom/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x85000000
 MR_INFOS := device/xiaomi/aries/mrom_infos
 #MR_DISABLE_ALPHA := true
-#MR_PIXEL_FORMAT := "RGBX_8888"
+# MR_DEVICE_HOOKS := device/xiaomi/aries/mrom/mr_hooks.c
+# MR_DEVICE_HOOKS_VER := 5
+
+MR_PIXEL_FORMAT := "RGBX_8888"
+#MR_DEFAULT_BRIGHTNESS := 100
 MR_QCOM_OVERLAY_USE_VSYNC := true
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/xiaomi/aries/mrom/mr_qcom_overlay.h

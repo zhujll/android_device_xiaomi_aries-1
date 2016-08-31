@@ -16,4 +16,5 @@ allow qmux radio_device:file rw_file_perms;
 # wake lock access
 wakelock_use(qmux)
 
-allow qmux self:process execmem;
+#allow qmux self:process execmem;
+#allow qmux sysfs_smdcntl_open_timeout:file rw_file_perms;

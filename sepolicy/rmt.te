@@ -1,5 +1,5 @@
 # remote storage process (runs as nobody)
-type rmt, domain, rmt_placeholder;
+type rmt, domain;
 type rmt_exec, exec_type, file_type;
 
 # Started by init
@@ -16,7 +16,7 @@ allow rmt root_block_device:dir r_dir_perms;
 allow rmt shared_log_device:chr_file rw_file_perms;
 
 allow rmt block_device:dir search;
-allow rmt kmem_device:chr_file rw_file_perms;
+#allow rmt kmem_device:chr_file rw_file_perms;
 allow rmt self:capability sys_rawio;
 
 allow rmt self:socket create_socket_perms;
@@ -26,7 +26,8 @@ allow rmt cgroup:dir { create add_name };
 wakelock_use(rmt)
 
 # Access property service to set ctl.rmt_storage
-unix_socket_connect(rmt, property, init)
+set_prop(rmt, ctl_rmt_prop)
+#unix_socket_connect(rmt, property, init)
 allow rmt ctl_rmt_prop:property_service set;
 
 allow rmt self:process execmem;

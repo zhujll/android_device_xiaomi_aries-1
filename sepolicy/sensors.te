@@ -45,7 +45,8 @@ wakelock_use(sensors)
 allow sensors cgroup:dir { create add_name };
 
 # Allow to set sensor properties
-unix_socket_connect(sensors, property, init)
+set_prop(sensors, sensors_prop)
+#unix_socket_connect(sensors, property, init)
 allow sensors sensors_prop:property_service set;
 auditallow sensors sensors_prop:property_service set;
 

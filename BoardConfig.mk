@@ -151,10 +151,10 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-#BOARD_SEPOLICY_DIRS += \
-#    device/xiaomi/aries/sepolicy
+BOARD_SEPOLICY_DIRS += \
+    device/xiaomi/aries/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -164,7 +164,7 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 # Camera
-COMMON_GLOBAL_CFLAGS       += -DQCOM_BSP -DCAMERA_VENDOR_L_COMPAT
+#COMMON_GLOBAL_CFLAGS       += -DQCOM_BSP -DCAMERA_VENDOR_L_COMPAT
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 #V4L2_BASED_LIBCAM := true
 
@@ -175,7 +175,7 @@ HAVE_ADRENO_SOURCE:= false
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 -include vendor/xiaomi/aries/BoardConfigVendor.mk
 

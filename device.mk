@@ -175,7 +175,7 @@ PRODUCT_COPY_FILES += \
 ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
 	camera.msm8960 \
-	libshim_camera
+#	libshim_camera
 
 PRODUCT_PACKAGES += \
         libmm-omxcore \

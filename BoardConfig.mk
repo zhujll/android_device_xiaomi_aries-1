@@ -199,3 +199,5 @@ TARGET_BUILD_REC_ZIP := true
 
 # For MultiRom
 include device/xiaomi/aries/mrom.mk
+# For twrp.fstab
+include device/xiaomi/aries/twrp.mk

@@ -147,13 +147,16 @@ PRODUCT_PACKAGES += \
 	copybit.msm8960 \
 	memtrack.msm8960
 
-PRODUCT_PACKAGES += \
-	audio.primary.msm8960 \
-	audio.a2dp.default \
-	audio.usb.default \
-	audio.r_submix.default \
-	libaudio-resampler \
-	tinymix
+# Audio remove for test
+#PRODUCT_PACKAGES += \
+#	audio.primary.msm8960 \
+#	audio.a2dp.default \
+#	audio.usb.default \
+#	audio.r_submix.default \
+#	libaudio-resampler \
+#	tinymix \
+#	libalsa-intf
+
 
 # Voice processing
 PRODUCT_PACKAGES += libqcomvoiceprocessing
@@ -164,8 +167,7 @@ PRODUCT_PACKAGES += \
 	hci_qcomm_init
 
 PRODUCT_PACKAGES += \
-	power.msm8960 \
-	libalsa-intf
+	power.msm8960
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.bt.sh:system/etc/init.aries.bt.sh

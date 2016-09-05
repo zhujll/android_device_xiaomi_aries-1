@@ -105,7 +105,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
 
     property_set("ro.product.device", "aries");
-    property_set("ro.build.description", "mk_aries-eng 6.0.1 MOB30J bb3258d9fc test-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/mk_aries/aries:6.0.1/MOB30J/bb3258d9fc:eng/test-keys");
+    property_set("ro.build.description", "cm_aries-eng 7.0 NRD90M 2aae1629bc test-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/cm_aries/aries:7.0/NRD90M/2aae1629bc:eng/test-keys");
 
 }

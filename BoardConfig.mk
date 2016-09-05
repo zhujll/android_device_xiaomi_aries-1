@@ -36,18 +36,12 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 
-TARGET_USE_PREBUILT_KERNEL := true
 
-ifneq ($(TARGET_USE_PREBUILT_KERNEL),true)
 # Try to build the kernel
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CONFIG := cyanogen_aries_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-else
-include device/xiaomi/aries-kernel/Android.mk
-endif
-
 
 
 BOARD_USES_ALSA_AUDIO := true

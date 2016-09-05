@@ -30,6 +30,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -37,6 +39,7 @@
 #include "util.h"
 
 #include "init_msm.h"
+using std::string;
 
 
 #define RAW_ID_PATH     "/sys/devices/system/soc/soc0/raw_id"
@@ -68,7 +71,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
-    char platform[PROP_VALUE_MAX];
+    string platform;
     int rc;
     unsigned long raw_id = -1;
 
@@ -76,8 +79,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     UNUSED(msm_ver);
     UNUSED(board_type);
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+    platform = property_get("ro.board.platform");
+    if (!ISMATCH(platform.c_str(), ANDROID_TARGET))
         return;
 
     /* get raw ID */

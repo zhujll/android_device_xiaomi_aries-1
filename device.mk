@@ -251,8 +251,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += qrngd
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # This is the aries-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
-
-$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

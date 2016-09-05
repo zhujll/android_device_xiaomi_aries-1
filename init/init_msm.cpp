@@ -56,6 +56,8 @@
 #define STRCONV_(x)      #x
 #define STRCONV(x)       "%" STRCONV_(x) "s"
 
+using std::string;
+
 static unsigned long msm_id;
 static unsigned long msm_ver;
 static char board_type[BUF_SIZE];
@@ -176,12 +178,12 @@ void set_hdmi_node_perms()
 
 static int check_rlim_action()
 {
-    char pval[PROP_VALUE_MAX];
+    string pval;
     int rc;
     struct rlimit rl;
-    rc = property_get("persist.debug.trace",pval);
+    pval = property_get("persist.debug.trace");
 
-    if(rc && (strcmp(pval,"1") == 0)) {
+    if((strcmp(pval.c_str(),"1") == 0)) {
         rl.rlim_cur = RLIM_INFINITY;
         rl.rlim_max = RLIM_INFINITY;
         if (setrlimit(RLIMIT_CORE, &rl) < 0) {

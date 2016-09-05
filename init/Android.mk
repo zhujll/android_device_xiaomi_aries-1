@@ -29,7 +29,7 @@ LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
 LOCAL_C_INCLUDES += \
 	system/core/init
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := init_msm
+LOCAL_MODULE := libinit_msm
 include $(BUILD_STATIC_LIBRARY)
 
 endif

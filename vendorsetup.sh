@@ -18,3 +18,5 @@ add_lunch_combo aosp_aries-userdebug
 add_lunch_combo aosp_aries-eng
 add_lunch_combo mk_aries-eng
 add_lunch_combo mk_aries-userdebug
+add_lunch_combo cm_aries-eng
+add_lunch_combo cm_aries-userdebug

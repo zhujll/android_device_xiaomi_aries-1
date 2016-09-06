@@ -35,8 +35,6 @@ BOARD_KERNEL_CMDLINE += earlyprintk=serial,ttyHSL0,115200,n8
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
-
-
 # Try to build the kernel
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
@@ -45,7 +43,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 
 BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_LEGACY_ALSA_AUDIO := true
+BOARD_USES_LEGACY_ALSA_AUDIO := false
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 BOARD_AUDIO_AMPLIFIER := device/xiaomi/aries/libaudioamp
@@ -94,15 +92,9 @@ TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= false
+WITH_DEXPREOPT := false
+DONT_DEXPREOPT_PREBUILTS := true
 
 TARGET_RECOVERY_FSTAB = device/xiaomi/aries/fstab.aries
 RECOVERY_FSTAB_VERSION = 2
@@ -122,9 +114,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USES_SECURE_SERVICES := true
 
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
-
-
-
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.aries
 
@@ -179,7 +168,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_HARDWARE_CLASS := device/xiaomi/aries/mkhw/
 
 #for cyanogen
-BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw/
+#BOARD_HARDWARE_CLASS := device/xiaomi/aries/cmhw/
 
 TARGET_USES_LOGD := false
 

@@ -148,14 +148,14 @@ PRODUCT_PACKAGES += \
 	memtrack.msm8960
 
 # Audio remove for test
-#PRODUCT_PACKAGES += \
-#	audio.primary.msm8960 \
-#	audio.a2dp.default \
-#	audio.usb.default \
-#	audio.r_submix.default \
-#	libaudio-resampler \
-#	tinymix \
-#	libalsa-intf
+PRODUCT_PACKAGES += \
+	audio.primary.msm8960 \
+	audio.a2dp.default \
+	audio.usb.default \
+	audio.r_submix.default \
+	libaudio-resampler \
+	tinymix \
+	libalsa-intf
 
 
 # Voice processing
@@ -225,10 +225,10 @@ PRODUCT_PACKAGES += \
 	resize2fs_static
 
 # fmradio support
-PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    libqcomfm_jni \
-    FM2
+#PRODUCT_PACKAGES += \
+#    qcom.fmradio \
+#    libqcomfm_jni \
+#    FM2
 
 ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -250,8 +250,12 @@ PRODUCT_PACKAGES += \
 # QRNGD
 PRODUCT_PACKAGES += qrngd
 
+# org.cyanogenmod.platform
+PRODUCT_PACKAGES += \
+	org.cyanogenmod.platform
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+#$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # This is the aries-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)

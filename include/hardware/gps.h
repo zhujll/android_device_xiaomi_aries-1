@@ -148,7 +148,7 @@ typedef uint32_t GpsAidingData;
 #define BDS_DELETE_EPHEMERIS                     0X02000000
 #define BDS_DELETE_ALMANAC                       0X04000000
 
-#define GPS_DELETE_ALL                           0xFFFFFFFF
+#define GPS_DELETE_ALL                           0xFFFF
 
 /** AGPS type */
 typedef uint16_t AGpsType;
@@ -1817,5 +1817,4 @@ typedef struct {
 __END_DECLS
 
 #endif /* ANDROID_INCLUDE_HARDWARE_GPS_H */
-
 

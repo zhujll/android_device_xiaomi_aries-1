@@ -16,4 +16,5 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_aries.mk \
+    $(LOCAL_DIR)/cm.mk \
     $(LOCAL_DIR)/full_aries.mk

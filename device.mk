@@ -83,9 +83,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/xiaomi/aries/chargeonlymode:root/sbin/chargeonlymodeç
     
-# Prebuilt input device calibration files
-PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

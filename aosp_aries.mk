@@ -1,5 +1,5 @@
 #
-# Copyright 2012 The Android Open Source Project
+# Copyright 2013 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, device/xiaomi/aries/full_aries.mk)
 
-PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/aosp_aries.mk \
-	$(LOCAL_DIR)/full_aries.mk \
-	$(LOCAL_DIR)/mk_aries.mk \
-	$(LOCAL_DIR)/cm.mk
+PRODUCT_NAME := aosp_aries

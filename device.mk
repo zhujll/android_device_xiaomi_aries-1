@@ -75,6 +75,7 @@ PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
 	device/xiaomi/aries/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
 	device/xiaomi/aries/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
+	device/xiaomi/aries/sensor00fn1a.kl:system/usr/keylayout/sensor00fn1a.kl \
 	device/xiaomi/aries/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
 	device/xiaomi/aries/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
 	device/xiaomi/aries/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \

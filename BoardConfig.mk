@@ -68,6 +68,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/aries/bluetooth
 # Use clang
 USE_CLANG_PLATFORM_BUILD := true
 
+# Use the QCOM PowerHAL
+TARGET_POWERHAL_VARIANT := qcom
+
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn

@@ -125,7 +125,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/aries
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += \ 
-       device/xiaomi/aries/sepolicy
+#       device/xiaomi/aries/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 

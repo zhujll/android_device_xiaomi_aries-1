@@ -37,10 +37,6 @@ PRODUCT_PACKAGES := \
 PRODUCT_PACKAGES += \
 	lights.msm8960
 
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
 	device/xiaomi/aries/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \

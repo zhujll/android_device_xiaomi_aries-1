@@ -1,18 +1,26 @@
-# kickstart processes and scripts (system process)
-type kickstart, domain;
-type kickstart_exec, file_type, exec_type;
+# mdm_helper processes and scripts (system process)
 
 # Spawn /system/bin/efsks and /system/bin/ks
-allow kickstart kickstart_exec:file { open execute_no_trans getattr };
+allow mdm_helper mdm_helper_exec:file { open execute_no_trans getattr };
 
-init_daemon_domain(kickstart)
 # Run dd from toolbox on firmware files
-allow kickstart shell_exec:file rx_file_perms;
-allow kickstart system_file:file execute_no_trans;
-allow kickstart toolbox_exec:file rx_file_perms;
+allow mdm_helper shell_exec:file rx_file_perms;
+allow mdm_helper system_file:file execute_no_trans;
+allow mdm_helper toolbox_exec:file rx_file_perms;
 
 # Wake lock access
-wakelock_use(kickstart)
+wakelock_use(mdm_helper)
 
 # for qcks
 allow mdm_helper toolbox_exec:file { getattr read open execute execute_no_trans };
+
+allow mdm_helper_exec sysfs_devices_system_cpu:file { getattr open read };
+allow mdm_helper_exec sysfs_devices_system_cpu:dir { search };
+allow mdm_helper_exec mdm_helper_exec:dir { search  };
+allow mdm_helper_exec mdm_helper_exec:file { getattr read execute open execute_no_trans };
+allow mdm_helper_exec properties_serial:file { getattr open read };
+allow mdm_helper_exec property_contexts:file { read open getattr };
+
+
+
+

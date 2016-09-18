@@ -202,6 +202,17 @@ endif
 #PRODUCT_COPY_FILES += \
 #        device/lge/mako/gps.conf:system/etc/gps.conf
 
+# RIL
+PRODUCT_PACKAGES += \
+	libshim_boringssl \
+	libstlport \
+	libxml2 \
+	libqsap_sdk \
+	telephony-ext
+
+PRODUCT_BOOT_JARS += \
+   telephony-ext
+   
 # GPS
 PRODUCT_PACKAGES += \
         libloc_adapter \

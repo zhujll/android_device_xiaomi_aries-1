@@ -1,0 +1,18 @@
+# kickstart processes and scripts (system process)
+type kickstart, domain;
+type kickstart_exec, file_type, exec_type;
+
+# Spawn /system/bin/efsks and /system/bin/ks
+allow kickstart kickstart_exec:file { open execute_no_trans getattr };
+
+init_daemon_domain(kickstart)
+# Run dd from toolbox on firmware files
+allow kickstart shell_exec:file rx_file_perms;
+allow kickstart system_file:file execute_no_trans;
+allow kickstart toolbox_exec:file rx_file_perms;
+
+# Wake lock access
+wakelock_use(kickstart)
+
+# for qcks
+allow mdm_helper toolbox_exec:file { getattr read open execute execute_no_trans };

@@ -1,0 +1,2 @@
+allow system_server mdm_device:chr_file { read open getattr ioctl };
+auditallow system_server mdm_device:chr_file { read open getattr ioctl };

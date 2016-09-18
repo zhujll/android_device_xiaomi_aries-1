@@ -5,5 +5,3 @@
 
 allow sysinit toolbox_exec:file { read open getattr execute  execute_no_trans };
 auditallow sysinit toolbox_exec:file { read open getattr execute  execute_no_trans };
-
-

@@ -247,7 +247,7 @@ PRODUCT_PACKAGES += \
 	resize2fs_static
 	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib/libril-qc-qmi-1.so
+	rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnCdmaDevice=0

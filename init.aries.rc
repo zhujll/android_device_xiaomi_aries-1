@@ -23,6 +23,9 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
+    
+    # Use this trick to get a running rild
+    export LD_PRELOAD "/system/lib/libshim_boringssl.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system

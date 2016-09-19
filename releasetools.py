@@ -12,7 +12,7 @@ def FullOTA_InstallEnd(info):
   try:
     bootloader_img = info.input_zip.read("RADIO/bootloader.img")
   except KeyError:
-    print "no bootloader.img in target_files; skipping install"
+    print ("no bootloader.img in target_files; skipping install")
   else:
     WriteBootloader(info, bootloader_img)
 
@@ -20,7 +20,7 @@ def FullOTA_InstallEnd(info):
   if radio_img:
     WriteRadio(info, radio_img)
   else:
-    print "no radio.img in target_files; skipping install"
+    print ("no radio.img in target_files; skipping install")
 
 
 def IncrementalOTA_VerifyEnd(info):
@@ -45,11 +45,11 @@ def IncrementalOTA_InstallEnd(info):
       source_bootloader_img = None
 
     if source_bootloader_img == target_bootloader_img:
-      print "bootloader unchanged; skipping"
+      print ("bootloader unchanged; skipping")
     else:
       WriteBootloader(info, target_bootloader_img)
   except KeyError:
-    print "no bootloader.img in target target_files; skipping install"
+    print ("no bootloader.img in target target_files; skipping install")
 
   tf = FindRadio(info.target_zip)
   if not tf:
@@ -67,7 +67,7 @@ def IncrementalOTA_InstallEnd(info):
       sf = common.File("radio.img", sf)
 
       if tf.sha1 == sf.sha1:
-        print "radio image unchanged; skipping"
+        print ("radio image unchanged; skipping")
       else:
         diff = common.Difference(tf, sf, diff_program="bsdiff")
         common.ComputeDifferences([diff])
@@ -168,7 +168,7 @@ def WriteBootloader(info, bootloader):
     try:
       _, device = common.GetTypeAndDevice("/"+i, info.info_dict)
     except KeyError:
-      print "skipping flash of %s; not in recovery.fstab" % (i,)
+      print ("skipping flash of %s; not in recovery.fstab" % (i,))
       continue
     common.ZipWriteStr(info.output_zip, "bootloader.%s.img" % (i,),
                        bootloader[imgs[i][0]:imgs[i][0]+imgs[i][1]])

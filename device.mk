@@ -49,9 +49,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/mixer_paths.xml:system/etc/mixer_paths.xml
 
+# thermald-engine
 PRODUCT_COPY_FILES += \
-	device/xiaomi/aries/thermald_h.conf:system/etc/thermald_h.conf \
-	device/xiaomi/aries/thermald_l.conf:system/etc/thermald_l.conf
+	device/xiaomi/aries/thermald_l.conf:system/etc/thermald-8064.conf
+#	device/xiaomi/aries/thermald_h.conf:system/etc/thermald_h.conf \
+#	device/xiaomi/aries/thermald_l.conf:system/etc/thermald_l.conf \
+
 
 PRODUCT_COPY_FILES += \
 	device/xiaomi/aries/init.aries.rc:root/init.aries.rc \

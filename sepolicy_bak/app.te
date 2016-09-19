@@ -1,3 +1,0 @@
-# Reading from gpuclk
-allow appdomain sysfs_gpuclk:file r_file_perms;
-

@@ -1,0 +1,2 @@
+# Radio related block device
+type efs_block_device, dev_type;

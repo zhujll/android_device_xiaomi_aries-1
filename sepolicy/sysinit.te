@@ -1,7 +1,4 @@
-#09-18 12:50:28.980   245   245 I sysinit : type=1400 audit(0.0:6): avc: denied { getattr } for path="/system/bin/toolbox" dev="mmcblk0p21" ino=16548 scontext=u:r:sysinit:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
-#09-18 12:50:28.980   245   245 I sysinit : type=1400 audit(0.0:7): avc: denied { execute } for name="toolbox" dev="mmcblk0p21" ino=16548 scontext=u:r:sysinit:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
-#09-18 12:50:28.980   270   270 I sysinit : type=1400 audit(0.0:8): avc: denied { read open } for name="toolbox" dev="mmcblk0p21" ino=16548 scontext=u:r:sysinit:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
-#09-18 12:50:28.980   270   270 I sysinit : type=1400 audit(0.0:9): avc: denied { execute_no_trans } for path="/system/bin/toolbox" dev="mmcblk0p21" ino=16548 scontext=u:r:sysinit:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
-
 allow sysinit toolbox_exec:file { read open getattr execute  execute_no_trans };
 auditallow sysinit toolbox_exec:file { read open getattr execute  execute_no_trans };
+
+allow sysinit system_file:dir { read open };

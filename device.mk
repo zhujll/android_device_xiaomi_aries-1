@@ -119,6 +119,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
 	ro.ril.def.preferred.network=9
 
+# SoftAP
+PRODUCT_PACKAGES += \
+	libqsap_sdk \
+	libQWiFiSoftApCfg \
+	libwcnss_qmi \
+	wcnss_service
+
 # Audio Configuration
 # FIXME: Remove persist.audio.handset.mic and persist.audio.fluence.mode
 #        while switching new audio HAL from legacy HAL
@@ -137,7 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.radio.apm_sim_not_pwdn=1
+	persist.radio.apm_sim_not_pwdn=0
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -244,6 +251,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	keystore.msm8960
 
+# Radio
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+#    librmnetctl \
+#    rmnetcli
+
 PRODUCT_PACKAGES += \
 	wpa_supplicant_overlay.conf \
 	p2p_supplicant_overlay.conf
@@ -266,11 +279,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0
+	wifi.interface=wlan0 \
+	wifi.supplicant_scan_interval=15 \
+	ro.use_data_netmgrd=true \
+	persist.data.netmgrd.qos.enable=true \
+	persist.data.tcpackprio.enable=true \
+	ro.data.large_tcp_window_size=true
+
+ # IPC router config
+PRODUCT_COPY_FILES += \
+	device/xiaomi/aries/lowi.conf:system/etc/lowi.conf
+
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
+	media.aac_51_output_enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
         debug.egl.recordable.rgba8888=1

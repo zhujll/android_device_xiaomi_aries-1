@@ -115,10 +115,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=320
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	telephony.lteOnGsmDevice=1 \
-	ro.telephony.default_network=9 \
-	ro.ril.def.preferred.network=9
-
+	ro.telephony.default_network=9,1 \
+	ro.ril.def.preferred.network=9 \
+	ro.telephony.ril.config=simactivation \
+	ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999 \
+	ril.subscription.types=NV,RUIM \
+	persist.radio.rat_on=combine
 # SoftAP
 PRODUCT_PACKAGES += \
 	libqsap_sdk \

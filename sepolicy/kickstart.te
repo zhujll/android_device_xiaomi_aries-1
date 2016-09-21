@@ -29,7 +29,7 @@ allow mdm_helper_exec properties_serial:file { getattr open read };
 allow mdm_helper_exec property_contexts:file { read open getattr };
 
 # Read and write to /dev/block/mmcblk0p12,13,16
-allow mdm_helper efs_block_device:blk_file rw_file_perms;
+allow mdm_helper efs_boot_dev:blk_file rw_file_perms;
 allow mdm_helper block_device:dir { getattr write search };
 
 #Needed to detect presence of hsic bridge and to xfer images

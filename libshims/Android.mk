@@ -37,3 +37,22 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+# libshim_ril.so
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+	ril_shim.cpp
+
+LOCAL_SHARED_LIBRARIES := \
+	liblog \
+	libutils \
+	libril \
+	libdl \
+	libbinder
+
+LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/libril
+
+LOCAL_MODULE := libshim_ril
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)

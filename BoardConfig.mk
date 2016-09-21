@@ -41,6 +41,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 TARGET_KERNEL_CONFIG := cyanogen_aries_defconfig
 KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-5.3/bin/"
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_LEGACY_ALSA_AUDIO := false

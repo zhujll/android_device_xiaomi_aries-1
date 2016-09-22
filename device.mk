@@ -224,6 +224,7 @@ endif
 PRODUCT_PACKAGES += \
 	hci_qcomm_init \
 	libshim_boringssl \
+	libshim_ril \
 	libstlport \
 	libxml2 \
 	libqsap_sdk \

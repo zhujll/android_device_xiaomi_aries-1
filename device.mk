@@ -188,9 +188,6 @@ PRODUCT_COPY_FILES += \
     device/xiaomi/aries/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_PACKAGES += \
-	hci_qcomm_init
-
-PRODUCT_PACKAGES += \
 	power.msm8960
 
 PRODUCT_COPY_FILES += \

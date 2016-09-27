@@ -196,12 +196,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.bt.hci_transport=smd
 
-ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
+# Browser
+PRODUCT_PACKAGES += \
+    Browser
+
 PRODUCT_PACKAGES += \
 	camera.aries \
 	camera.msm8960 \
 	libmmcamera_interface2 \
-	libmmcamera_interface
+	libmmcamera_interface \
+	libmm-qcamera
 
 PRODUCT_PACKAGES += \
         libmm-omxcore \
@@ -211,7 +215,6 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libstagefrighthw \
 	libc2dcolorconvert
-endif
 
 # GPS configuration
 #PRODUCT_COPY_FILES += \
@@ -272,10 +275,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnCdmaDevice=0
 
-ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
-endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
@@ -309,7 +310,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Snap Camera
 PRODUCT_PACKAGES += \
-    SnapdragonCamera
+	Snap
 
 # Unbreak videorecording with Snap Camera
 PRODUCT_PROPERTY_OVERRIDES += \

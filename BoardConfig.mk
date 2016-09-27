@@ -69,6 +69,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/aries/bluetooth
 # Use clang
 USE_CLANG_PLATFORM_BUILD := true
 
+
 # RIL Bring UP
 #BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT                := caf
